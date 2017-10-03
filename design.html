@@ -22,41 +22,46 @@
   <section>
     <h2>1. Administrative Details</h2>
     <p>
-      The name of your client, and his or her position in the organization.
-    </p>
+      We have an imaginary client which are the band Excellence.    </p>
   </section>
 
   <section>
     <h2>2. Purpose, goals, and audience</h2>
     <p>
-      A summary paragraph to remind the reader about the
-      purpose, goals, and audience of your website. Make it brief and succinct.    </p>
+      The main purpose of the website is to make people excited about the band Excellence and to spread information, and further sell more tickets for the concerts. To fulfill the purpose we have made some concrete goals stating what the site should achieve by the end of 2018.
+    </p>
+    <p>
+      The audience for our website are the people that the goals are intended for. This include supporters of the band or supporters to be, as well as agencies, venues and sponsors. The music are intended for young adults around 18-30 years old who like pop music.
+    </p>
   </section>
 
   <section>
     <h2>3. Navigation Structure</h2>
     <p>
-      A brief discussion about the site's navigation structure using the
-      terminology learned in class and the notes on slides “HTML Cont.” in Storyboard and
-      Structures sections (slides:122-129). This is not a sketch of your navbar (or whatever), but
-      instead a map or description of which pages connect to which other pages. (It is sometimes
-      better to describe a clique in words than to try to draw it.) The goal is to explain why the choice
-      of a particular structure makes sense for your website.
+      One of the specific requirements is that the site should have a navigation bar, which links to each page of the site. This creates a navigation structure where each page links to each other page, which is often called the clique navigation structure. We have chosen this navigation structure, because one of the specific requirements is that all pages can be accessed using a maximum of two clicks, and because this is not a site that should be read linearly or hierarchically. The navigation bar should help the user to be aware of the different pages, and find the desired information quickly. This is possible to achieve because the site does not contain that many pages.
     </p>
+    <p>
+      Excellence wants to look professional, and a quick and easy navigation is a very important step in achieving this. In addition to the links in the navbar, there is a sitemap in the footer and the content at the “FAQ” page will link to different pages of the site.
+    </p>
+    <p>
+      The “contact us” page, “home” page and the footer of all pages will also link to facebook and YouTube. This makes social media accessible wherever the user is, and this is very important for a band that wants to be known and recognized. Below is a storyboard of the website's structure.
+    </p>
+    <figure>
+      <img src="sitemap.JPG" alt="Image of a sitemap of the website">
+      <figcaption>Figure 3.1: Sitemap of our website</figcaption>
+    </figure>
   </section>
 
   <section>
     <h2>4. Page Layout and Appearance</h2>
     <p>
-      A description of design decisions that are universal to your
-      site. You should specify in writing the fonts (types and sizes), the color scheme (for text,
-      background, links, shadows, borders, etc.), navbar position in the page and its appearance,
-      banner, footer, the social icons bar, or background images (if any of them is applicable). In
-      addition to the textual description of these elements, you should include a mockup image of
-      this generic page that has only these common elements and no other content. Finally, you
-      should describe how these universal design decisions fulfill certain goals of the website and
-      its audience.
+      [Insert here]
     </p>
+    <h3>Modularity</h3>
+    <p>
+      In order to facilitate a universal design across the entire website, a standard structure is imposed on the articles. The content section of the page is a replaceable component which will be swapped out upon navigation. It is defined as a column with margins on the left and right side. This allows all the pages to use the same background, navigation bar and footer. The home page is an exception to this rule, which does not follow the form of a column with margins.
+    </p>
+
   </section>
 
   <section>
@@ -142,7 +147,7 @@
         <figcaption>Figure 5.7: Mockup of the Video page.</figcaption>
       </figure>
       <p>
-
+        The video page contains videos related to the band, such as video from their concerts, practices and behind the scenes.
       </p>
     </section>
 
@@ -177,17 +182,22 @@
   </section>
 
   <section>
-    <h2>6. Minimum Requirements:</h2>
+    <h2>6. Minimum Requirements for JavaScript</h2>
     <p>
-      The website must include four distinct JavaScript applications (for
-      example, rollovers effects on images or menus, user-defined functions, form validation,
-      animations etc.). The four applications must all be different from each other.
-      Clearly indicate how each of you will be fulfilling these minimum requirements.
-      Please note that each of these items must be constructed entirely by you and not copied from
-      external websites on the Web (though you can modify code from our class materials). Once
-      you fulfill the minimum requirements with your own code, you are allowed to get code from the
-      web (with source attribution) to incorporate certain advanced components (e.g. image galleries
-      with transitions), but they will not count as part of the minimum requirements.
+      An implementation of a guestbook, utilizing JavaScript to handle button clicks and the contents of text boxes. As an extended goal, it may use an in-browser database to locally store comments submitted by the user.
+    </p>
+    <p>
+      Discography page will generate album elements from JavaScript to keep the HTML document DRY. It will pull information on the album art, titles and songs which will be available on the JavaScript side. DOM elements will be inserted into the viewable document.
+    </p>
+    <p>
+      The navigation bar will switch pages by issuing XMLHttpRequests and swapping the current page’s content with the next page. In addition to this, given enough time, transitions may be applied to make it look more aesthetically pleasing (as the page will otherwise blink over to the other page upon swapping).
+    </p>
+    <p>
+      On homepage, the concert image will fade in from being invisible, giving the user a soft introduction to the image. This can be done using a mix of CSS and JavaScript, where the image starts with 0 opacity, and upon page load the JavaScript will add a CSS class which triggers a transition to full opacity.
+    </p>
+    <p>
+      <i>(Outside minimum requirements)</i>
+      In the navigation bar, dropdown menus will be used to hide most links to the subpages. The dropdown menus will be revealed upon clicking the menu items. An extended goal will be to apply an expanding animation to make it more visually pleasing.
     </p>
   </section>
 
