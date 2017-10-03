@@ -24,3 +24,8 @@ footer {
 header {
     margin-bottom: 30px;
 }
+
+main {
+    background: #eeeeee;
+    padding: 10px 30px 30px 30px;
+}
