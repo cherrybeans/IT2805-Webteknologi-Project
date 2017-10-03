@@ -29,3 +29,12 @@ main {
     background: #eeeeee;
     padding: 10px 30px 30px 30px;
 }
+
+img {
+    max-width: 100%;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+}
