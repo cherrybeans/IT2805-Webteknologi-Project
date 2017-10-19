@@ -1,0 +1,68 @@
+﻿
+/*Selve navbaren*/
+.navbar {
+    overflow:hidden;
+    background-color: #333;
+    font-family:Arial;
+    padding-right: 50px;    /*Måtte padde litt, eller endre på dropdown oppførsel*/
+
+}
+
+/*De "knappene" på navbaren som ikke har droppdown*/
+.navbar a{
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+/*Dropdown*/
+.dropdown{
+    float:right;
+    overflow: hidden;
+    
+}
+
+/*Dropdown knappene*/
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background: inherit;
+
+}
+
+/*Alt blir rødt ved hover*/
+.navbar a:hover, .dropdown:hover .dropbtn , dropdown-content a:hover{
+    background-color: red;
+}
+
+/*Dropdown bakgrunnen*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/*Lenkene på dropdownen*/
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.show {
+    display: block;
+}
