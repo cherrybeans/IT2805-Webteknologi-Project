@@ -16,7 +16,7 @@ function loadArticle(url, targetContainer, closure, otherwise)
         if(req.status == 200)
         {
             /* On success... */
-            console.log(req.responseText);
+            //console.log(req.responseText);
             targetContainer.innerHTML = req.responseText;
             /* ... and notify the client */
             closure();
@@ -39,7 +39,7 @@ function quickLoad_ext(articleName, otherwise)
     loadArticle(articleResource, targetContainer, function() {
         /* TODO: Implement some sort of transition effect here
          *  to avoid blinking */
-        console.log("Page loaded: " + articleName);
+        //console.log("Page loaded: " + articleName);
         
         switch(articleName)
         {
@@ -56,11 +56,56 @@ function quickLoad_ext(articleName, otherwise)
     });
 }
 
-function quickLoad(articleName)
+var documentDependencies = {
+    home: {
+        stylesheets: [
+            'styles/main.css',
+            'styles/home.css',
+            'https://fonts.googleapis.com/css?family=Ubuntu:700',
+            'https://fonts.googleapis.com/css?family=Open+Sans:700'
+        ],
+        isLoaded: false,
+    },
+};
+
+function isOnline(url)
 {
-    quickLoad_ext(articleName, function(){});
+    return (url.slice(0, 5) == 'https') || (url.slice(0, 4) == 'http');
 }
 
+function quickLoad(articleName)
+{
+    quickLoad_ext(articleName, function(){
+        var deps = documentDependencies[articleName];
+        
+        if(deps == null)
+            return;
+        
+        if(deps.isLoaded)
+            return;
+            
+        deps.isLoaded = true;
+        var headerElement = document.getElementsByTagName("head");
+        
+        for(var i=0;i<deps.stylesheets.length;i++)
+        {
+            var sheet = deps.stylesheets[i];
+            
+            var sheetElement = document.createElement("link");
+            sheetElement.ref = "stylesheet";
+            
+            if(isOnline(sheet))
+            {
+                sheetElement.href = "sheet";
+            }else{
+                sheetElement.src = "sheet";
+            }
+            headerElement.appendChild(sheetElement);
+        }
+    });
+}
+
+/* On loading the page clean, load a page */
 window.onload = function() {
     var target = location.hash;
     target = target.replace("#", "");
@@ -68,9 +113,12 @@ window.onload = function() {
     /* Try to load the article given in the URL, otherwise
      *  load the home page for now.
      */
-    quickLoad_ext(target, function() {
+    if(target.length > 0)
+        quickLoad_ext(target, function() {
+            quickLoad("home");
+        });
+    else
         quickLoad("home");
-    });
     
     /* Because window.onload is global, we have to collect it somehow */
     gb_onLoad();

@@ -70,10 +70,5 @@ function gb_submitComment()
 
 function gb_onLoad()
 {
-    //gb_saveStorage([{name: "Dick" ,message: "Hello!"}]);
-    
-    console.log(gb_getStorage());
-
-    console.log(localStorage);
 }
 
