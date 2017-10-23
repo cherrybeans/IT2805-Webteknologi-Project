@@ -1,11 +1,27 @@
+/*  */
+var documentDependencies = {
+    home: {
+        stylesheets: [
+            'styles/home.css'
+        ],
+        scripts: [
+            
+        ],
+        isLoaded: false,
+    },
+};
+
 /*
     Load an article from a given URL into a given container.
     Plain text insertion into innerHTML
     
     \url absolute/relative URL to resource
     \targetContainer HTML element to insert into
+    \before function to run before loading the page proper
+    \closure function to be run after loading content
+    \otherwise function to be run if loading fails
  */ 
-function loadArticle(url, targetContainer, closure, otherwise)
+function loadArticle(url, targetContainer, before, closure, otherwise)
 {
     var req = new XMLHttpRequest();
     
@@ -16,8 +32,9 @@ function loadArticle(url, targetContainer, closure, otherwise)
         if(req.status == 200)
         {
             /* On success... */
+            before();
             //console.log(req.responseText);
-            targetContainer.innerHTML = req.responseText;
+            targetContainer.outerHTML = req.responseText;
             /* ... and notify the client */
             closure();
         }else if(req.status == 404)
@@ -31,12 +48,42 @@ function loadArticle(url, targetContainer, closure, otherwise)
     req.send();
 }
 
+function isOnline(url)
+{
+    return (url.slice(0, 5) == 'https') || (url.slice(0, 4) == 'http');
+}
+
 function quickLoad_ext(articleName, otherwise)
 {
-    var targetContainer = document.getElementsByTagName("content")[0];
+    var targetContainer = document.getElementsByTagName("main")[0];
     var articleResource = "articles/" + articleName + ".html";
 
     loadArticle(articleResource, targetContainer, function() {
+        /* Code to be run before the page properly loads */
+        /* Add page dependencies, like stylesheets and scripts to the page */
+        /* Allows minimal loading of page */
+        var deps = documentDependencies[articleName];
+        
+        if(deps == null)
+            return;
+        
+        if(deps.isLoaded)
+            return;
+            
+        deps.isLoaded = true;
+        var headerElement = document.getElementsByTagName("head")[0];
+        
+        console.log(headerElement);
+        
+        for(var i=0;i<deps.stylesheets.length;i++)
+        {
+            var sheetElement = document.createElement("link");
+            sheetElement.rel = "stylesheet";
+            sheetElement.href = deps.stylesheets[i];
+            
+            headerElement.append(sheetElement);
+        }
+    }, function() {
         /* TODO: Implement some sort of transition effect here
          *  to avoid blinking */
         //console.log("Page loaded: " + articleName);
@@ -56,53 +103,9 @@ function quickLoad_ext(articleName, otherwise)
     });
 }
 
-var documentDependencies = {
-    home: {
-        stylesheets: [
-            'styles/main.css',
-            'styles/home.css',
-            'https://fonts.googleapis.com/css?family=Ubuntu:700',
-            'https://fonts.googleapis.com/css?family=Open+Sans:700'
-        ],
-        isLoaded: false,
-    },
-};
-
-function isOnline(url)
-{
-    return (url.slice(0, 5) == 'https') || (url.slice(0, 4) == 'http');
-}
-
 function quickLoad(articleName)
 {
-    quickLoad_ext(articleName, function(){
-        var deps = documentDependencies[articleName];
-        
-        if(deps == null)
-            return;
-        
-        if(deps.isLoaded)
-            return;
-            
-        deps.isLoaded = true;
-        var headerElement = document.getElementsByTagName("head");
-        
-        for(var i=0;i<deps.stylesheets.length;i++)
-        {
-            var sheet = deps.stylesheets[i];
-            
-            var sheetElement = document.createElement("link");
-            sheetElement.ref = "stylesheet";
-            
-            if(isOnline(sheet))
-            {
-                sheetElement.href = "sheet";
-            }else{
-                sheetElement.src = "sheet";
-            }
-            headerElement.appendChild(sheetElement);
-        }
-    });
+    quickLoad_ext(articleName, function(){} );
 }
 
 /* On loading the page clean, load a page */

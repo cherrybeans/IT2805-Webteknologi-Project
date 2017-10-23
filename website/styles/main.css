@@ -1,7 +1,7 @@
 /* SIGRID MADE THIS; WILL FIX */
 
 h1, p, table th {
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 body {
@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-  color: #8d3c58;
+  color: #eff4b6;
   font-size: 1.7em;
 }
 
@@ -27,7 +27,7 @@ h3 {
 }
 
 p, td {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.2em;
   color: white;
 }
@@ -52,9 +52,11 @@ table {
 
 
 main {
-  width: 50em;
+  max-width: 50em;
   margin: auto;
   background-color: #1f1f1f;
+  box-shadow: 0 0 20px black;
+  padding: 20px;
 }
 
 .content-area {
@@ -101,4 +103,4 @@ li {
   flex: 1;
 
 }
-*/
+
