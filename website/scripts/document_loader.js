@@ -1,4 +1,4 @@
-/*  */
+/* Listing of stylesheets and scripts attached to a given article */
 var documentDependencies = {
     home: {
         stylesheets: [
@@ -8,6 +8,14 @@ var documentDependencies = {
             
         ],
         isLoaded: false,
+    },
+    guestbook: {
+        stylesheets: [
+            'styles/guestbook.css'
+        ],
+        scripts: [
+            'scripts/guestbook.js'
+        ],
     },
 };
 
@@ -48,11 +56,20 @@ function loadArticle(url, targetContainer, before, closure, otherwise)
     req.send();
 }
 
-function isOnline(url)
+/* Given a list of stylesheets, either disable it (state=false) or enable it (state=true) */
+function setStylesheetState(stylesheetInfo, state)
 {
-    return (url.slice(0, 5) == 'https') || (url.slice(0, 4) == 'http');
+    for(var i=0;i<stylesheetInfo.length;i++)
+    {
+        var query = stylesheetInfo[i];
+        for(var j=0;j<document.styleSheets.length;j++)
+            if(document.styleSheets[j].href.endsWith(query))
+                document.styleSheets[j].disabled = !state;
+    }
 }
 
+/* A version of quickLoad() which allows a predicate upon failure */
+/* Do not chain calls to quickLoad_ext() through the predicate. */
 function quickLoad_ext(articleName, otherwise)
 {
     var targetContainer = document.getElementsByTagName("main")[0];
@@ -64,17 +81,44 @@ function quickLoad_ext(articleName, otherwise)
         /* Allows minimal loading of page */
         var deps = documentDependencies[articleName];
         
+        /* Disable the previous stylesheets */
+        /* We can do this by setting a property on the stylesheet,
+         *  putting it out of use for the current page */
+        if(location.search.length != 0)
+        {
+            var prevArticle = location.search;
+            prevArticle = prevArticle.replace("?", "");
+            var stylesheetInfo = documentDependencies[prevArticle];
+            if(stylesheetInfo != undefined)
+            {
+                setStylesheetState(stylesheetInfo.stylesheets, false);
+            }
+        }
+        
+        /* The rest of the code does not make sense if the page does not carry unique stylesheets */
         if(deps == null)
             return;
         
+        /* If elements are already inserted, just enable the stylesheets */
         if(deps.isLoaded)
-            return;
+        {
+            var stylesheetInfo = documentDependencies[articleName];
             
+            if(stylesheetInfo != undefined)
+            {
+                setStylesheetState(stylesheetInfo.stylesheets, true);
+            }
+            return;
+        }
+        
+        /* We set a state flag to indicate that the dependencies are loaded */
         deps.isLoaded = true;
+        
+        /* Get a reference to the <head> element into which scripts and
+         *  stylesheets will be inserted */
         var headerElement = document.getElementsByTagName("head")[0];
         
-        console.log(headerElement);
-        
+        /* In this case, the stylesheets have yet to be injected */
         for(var i=0;i<deps.stylesheets.length;i++)
         {
             var sheetElement = document.createElement("link");
@@ -83,19 +127,26 @@ function quickLoad_ext(articleName, otherwise)
             
             headerElement.append(sheetElement);
         }
-    }, function() {
-        /* TODO: Implement some sort of transition effect here
-         *  to avoid blinking */
-        //console.log("Page loaded: " + articleName);
         
+        /* TODO: Allow dynamic loading of Javascript sources */
+        
+    }, function() {
+        
+        /* Some Javascript files will need initialization on page load */
         switch(articleName)
         {
         case "guestbook":
+            /* Reads comments from localStorage and generates the comment section */
             gb_loadComments();
             break;
         default:
             break;
         }
+        
+        /* If navigation was successful, set location such that
+         *  the user may bookmark the page */
+        history.pushState(null, null, '?' + articleName);
+        
     }, function() {
         /* TODO: Add better error handling... */
         console.log("Failed to load page: " + articleName);
@@ -103,15 +154,16 @@ function quickLoad_ext(articleName, otherwise)
     });
 }
 
+/* The basic function to load an article, no fluff */
 function quickLoad(articleName)
 {
-    quickLoad_ext(articleName, function(){} );
+    quickLoad_ext(articleName, function(){});
 }
 
 /* On loading the page clean, load a page */
 window.onload = function() {
-    var target = location.hash;
-    target = target.replace("#", "");
+    var target = location.search;
+    target = target.replace("?", "");
     
     /* Try to load the article given in the URL, otherwise
      *  load the home page for now.
@@ -122,8 +174,5 @@ window.onload = function() {
         });
     else
         quickLoad("home");
-    
-    /* Because window.onload is global, we have to collect it somehow */
-    gb_onLoad();
 }
 

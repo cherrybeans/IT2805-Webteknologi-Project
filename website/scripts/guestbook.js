@@ -39,6 +39,7 @@ function gb_loadComments()
         dateL.innerHTML = new Date(comment.date).toLocaleDateString(["en-GB"]);
         nameL.innerHTML = comment.name;
         textL.innerHTML = comment.message;
+        element.classList.add("guestbookComment");
         
         element.append(dateL);
         element.append(document.createElement("br"));
@@ -55,6 +56,9 @@ function gb_submitComment()
     var nameBox = document.getElementById("gb_nameBox");
     var msgBox = document.getElementById("gb_msgBox");
     
+    if(!nameBox.checkValidity() || !msgBox.checkValidity())
+        return;
+    
     var currentBook = gb_getStorage();
     
     currentBook.push({
@@ -67,8 +71,3 @@ function gb_submitComment()
     
     gb_loadComments();
 }
-
-function gb_onLoad()
-{
-}
-
