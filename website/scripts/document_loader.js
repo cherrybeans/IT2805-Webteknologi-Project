@@ -63,8 +63,12 @@ function setStylesheetState(stylesheetInfo, state)
     {
         var query = stylesheetInfo[i];
         for(var j=0;j<document.styleSheets.length;j++)
+        {
+            if(document.styleSheets[j].href == null)
+                continue;
             if(document.styleSheets[j].href.endsWith(query))
                 document.styleSheets[j].disabled = !state;
+        }
     }
 }
 
