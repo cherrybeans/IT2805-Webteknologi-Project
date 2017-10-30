@@ -16,7 +16,17 @@ var documentDependencies = {
         scripts: [
             'scripts/guestbook.js'
         ],
+        isLoaded: false,
     },
+    about: {
+        stylesheets: [
+            'styles/about.css'
+        ],
+        scripts: [
+            
+        ],
+        isLoaded: false,
+    }
 };
 
 /*

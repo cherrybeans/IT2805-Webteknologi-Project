@@ -1,0 +1,17 @@
+div.memberListing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+div.memberListing > img {
+    max-width: 10em;
+    margin-right: 0.5em;
+}
+
+div.memberListing > p, section.memberDescription {
+    font-size: 0.8em;
+    margin: 0;
+}
+
