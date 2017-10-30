@@ -27,7 +27,7 @@ var documentDependencies = {
             
         ],
         isLoaded: false,
-    }
+    },
     discography: {
         stylesheets: [
             'styles/discography.css'
