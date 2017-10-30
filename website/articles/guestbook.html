@@ -1,34 +1,33 @@
 <main>
 
-<header>
-    <h1>Guestbook</h1>
-</header>
+  <header>
+      <h1>Guestbook</h1>
+  </header>
 
-<form id="commentForm" class="guestbook-submit-form" onsubmit="gb_submitComment()">
+  <form id="commentForm" class="guestbook-submit-form" onsubmit="gb_submitComment()">
 
-<table>
-<tr>
-    <td><strong>Name</strong></td>
-    <td><input id="gb_nameBox" type="text" placeholder="Write your name" required></td>
-</tr>
-<tr>
-    <td><strong>Message</strong></td>
-    <td><textarea id="gb_msgBox" rows="4" cols="40" placeholder="Write something nice!" required></textarea></td>
-</tr>
-<tr>
-    <td></td>
-    <td><input type="button" value="Submit" onclick="gb_submitComment()"></td>
-</tr>
-</table>
+  <table>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td><input id="gb_nameBox" type="text" placeholder="Write your name" required></td>
+    </tr>
+    <tr>
+        <td><strong>Message</strong></td>
+        <td><textarea id="gb_msgBox" rows="4" cols="40" placeholder="Write something nice!" required></textarea></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Submit" onclick="gb_submitComment()"></td>
+    </tr>
+  </table>
 
-</form>
+  </form>
 
-<hr>
-<h2>What others have said</h2>
+  <hr>
+  <h2>What others have said</h2>
 
-<div id="guestbookComments">
-    <!-- Comments will be dynamically inserted here -->
-</div>
+  <div id="guestbookComments">
+      <!-- Comments will be dynamically inserted here -->
+  </div>
 
 </main>
-

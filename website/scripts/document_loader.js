@@ -5,7 +5,7 @@ var documentDependencies = {
             'styles/home.css'
         ],
         scripts: [
-            
+
         ],
         isLoaded: false,
     },
@@ -27,26 +27,35 @@ var documentDependencies = {
         ],
         isLoaded: false,
     }
+    discography: {
+        stylesheets: [
+            'styles/discography.css'
+        ],
+        scripts: [
+            'scripts/discography.js'
+        ],
+        isLoaded: false,
+    },
 };
 
 /*
     Load an article from a given URL into a given container.
     Plain text insertion into innerHTML
-    
+
     \url absolute/relative URL to resource
     \targetContainer HTML element to insert into
     \before function to run before loading the page proper
     \closure function to be run after loading content
     \otherwise function to be run if loading fails
- */ 
+ */
 function loadArticle(url, targetContainer, before, closure, otherwise)
 {
     var req = new XMLHttpRequest();
-    
+
     req.onreadystatechange = function() {
         if(req.readyState != XMLHttpRequest.DONE)
             return;
-    
+
         if(req.status == 200)
         {
             /* On success... */
@@ -61,7 +70,7 @@ function loadArticle(url, targetContainer, before, closure, otherwise)
             otherwise();
         }
     };
-    
+
     req.open("GET", url);
     req.send();
 }
@@ -94,7 +103,7 @@ function quickLoad_ext(articleName, otherwise)
         /* Add page dependencies, like stylesheets and scripts to the page */
         /* Allows minimal loading of page */
         var deps = documentDependencies[articleName];
-        
+
         /* Disable the previous stylesheets */
         /* We can do this by setting a property on the stylesheet,
          *  putting it out of use for the current page */
@@ -108,44 +117,44 @@ function quickLoad_ext(articleName, otherwise)
                 setStylesheetState(stylesheetInfo.stylesheets, false);
             }
         }
-        
+
         /* The rest of the code does not make sense if the page does not carry unique stylesheets */
         if(deps == null)
             return;
-        
+
         /* If elements are already inserted, just enable the stylesheets */
         if(deps.isLoaded)
         {
             var stylesheetInfo = documentDependencies[articleName];
-            
+
             if(stylesheetInfo != undefined)
             {
                 setStylesheetState(stylesheetInfo.stylesheets, true);
             }
             return;
         }
-        
+
         /* We set a state flag to indicate that the dependencies are loaded */
         deps.isLoaded = true;
-        
+
         /* Get a reference to the <head> element into which scripts and
          *  stylesheets will be inserted */
         var headerElement = document.getElementsByTagName("head")[0];
-        
+
         /* In this case, the stylesheets have yet to be injected */
         for(var i=0;i<deps.stylesheets.length;i++)
         {
             var sheetElement = document.createElement("link");
             sheetElement.rel = "stylesheet";
             sheetElement.href = deps.stylesheets[i];
-            
+
             headerElement.append(sheetElement);
         }
-        
+
         /* TODO: Allow dynamic loading of Javascript sources */
-        
+
     }, function() {
-        
+
         /* Some Javascript files will need initialization on page load */
         switch(articleName)
         {
@@ -156,11 +165,11 @@ function quickLoad_ext(articleName, otherwise)
         default:
             break;
         }
-        
+
         /* If navigation was successful, set location such that
          *  the user may bookmark the page */
         history.pushState(null, null, '?' + articleName);
-        
+
     }, function() {
         /* TODO: Add better error handling... */
         console.log("Failed to load page: " + articleName);
@@ -178,7 +187,7 @@ function quickLoad(articleName)
 window.onload = function() {
     var target = location.search;
     target = target.replace("?", "");
-    
+
     /* Try to load the article given in the URL, otherwise
      *  load the home page for now.
      */
@@ -189,4 +198,3 @@ window.onload = function() {
     else
         quickLoad("home");
 }
-
