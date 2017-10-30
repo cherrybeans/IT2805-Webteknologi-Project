@@ -19,6 +19,15 @@ var documentDependencies = {
         onload: "gb_loadComments",
         isLoaded: false,
     },
+    about: {
+        stylesheets: [
+            'styles/about.css'
+        ],
+        scripts: [
+            
+        ],
+        isLoaded: false,
+    }
     discography: {
         stylesheets: [
             'styles/discography.css'
