@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css"/>
+
+  <title>IT2805 Design Planning</title>
+</head>
+<body>
+
+<header>
+  <h1>IT2805 Design Planning</h1>
+  <p>
+    Group 15 <br/>
+    Caroline Stensland Selte, Håvard Bjerke, Kristoffer Håkonsen, Sigrid Marita Kvamme
+    <br/>
+    Tuesday, 3rd of October, 2017
+  </p>
+</header>
+
+<main>
+  <section>
+    <h2>1. Administrative Details</h2>
+    <p>
+    Our client is the imaginary band Excellence.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Purpose, goals, and audience</h2>
+    <p>
+      The main purpose of the website is to make people excited about the band Excellence and to spread information, and further sell more tickets for the concerts. To fulfill the purpose we have made some concrete goals stating what the site should achieve by the end of 2018.
+    </p>
+    <p>
+      The audience for our website are the people that the goals are intended for. This include supporters of the band or supporters to be, as well as agencies, venues and sponsors. The music are intended for young adults around 18-30 years old who like pop music.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Navigation Structure</h2>
+    <p>
+      One of the specific requirements is that the site should have a navigation bar, which links to each page of the site. This creates a navigation structure where each page links to each other page, which is often called the clique navigation structure. We have chosen this navigation structure, because one of the specific requirements is that all pages can be accessed using a maximum of two clicks, and because this is not a site that should be read linearly or hierarchically. The navigation bar should help the user to be aware of the different pages, and find the desired information quickly. This is possible to achieve because the site does not contain that many pages.
+    </p>
+    <p>
+      Excellence wants to look professional, and a quick and easy navigation is a very important step in achieving this. In addition to the links in the navbar, there is a sitemap in the footer and the content at the “FAQ” page will link to different pages of the site.
+    </p>
+    <p>
+      The “contact us” page, “home” page and the footer of all pages will also link to facebook and YouTube. This makes social media accessible wherever the user is, and this is very important for a band that wants to be known and recognized. Below is a storyboard of the website's structure.
+    </p>
+    <figure>
+      <img src="images/sitemap.JPG" alt="Image of a sitemap of the website">
+      <figcaption>Figure 3.1: Sitemap of our website</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>4. Page Layout and Appearance</h2>
+    <p>
+      The website features a dark gray (#1c1c1c) background with a content div with a lighter gray (#1f1f1f) background. The content div has a drop shadow at zero distance and a width of 50rem. All of the text styling decisions are listed in Table 1. Links are white if nothing else is specified, and the drop shadow color is black.  Figure 4.1 shows the universal mockup of the site.
+    </p>
+    <p>
+      The logo of Excellence features a pentagon dimensioned to fit the size of the text it features in and the color is a dark shade of magenta (#512836).
+    </p>
+    <p>
+      The navigation bar is fixed to the top with a dark gray (#141414) background and a height of 90px. The width is the entire screen. To the left there is Excellences logo, and to the right is the navigation menu featuring three dropdown menus. The buttons are, in all caps-lock,  ‘Home’, ‘About’, ‘Concerts’, ‘Media’ and ‘Contact’.  ‘About’ contains a submenu containing ‘About Excellence’, ‘FAQ’ and ‘Discography’. ‘Media’ contains a submenu containing ‘Pictures’ and ‘Video’. ‘Contact’ contains a submenu containing ‘Contact Us’ and ‘Guestbook’. The drop down menus are marked with a white downward triangle after the button text.
+    </p>
+    <p>
+      The footer is anchored at the bottom of the page and contains the logo of the band, a small sitemap and social media icons. It features a dark gray (#141414)  background and a height of 300px. The width is the entire screen. The band’s logo is positioned to the leftmost part of the footer. The rightmost part of the footer contains social media links for Facebook and Youtube, which are 50x50px round buttons. The sitemap covers the area between the logo and the social media buttons and consists of several columns separated into sections as in the navigation bar. The text in the sitemap is centered.
+    </p>
+    <p>
+      By having the navbar fixed at the top, the site is easily navigable from anywhere on the site. By creating a navbar we fulfill the specific requirement of having one and that it contains a link to all subpages, also that every subpage is accessible in at most two clicks. If the footer is also in view, the site map there allows you to find any content with only one click. By implementing a dark color scheme and clear, simple text, we fulfill the specific requirement that it should have a dark, clean and modern look, which also appeals to our audience who are met with colors that fit the typical dark concert pictures.
+    </p>
+
+    <h3>Modularity</h3>
+    <p>
+      In order to facilitate a universal design across the entire website, a standard structure is imposed on the articles. The content section of the page is a replaceable component which will be swapped out upon navigation. It is defined as a column with margins on the left and right side. This allows all the pages to use the same background, navigation bar and footer. The home page is an exception to this rule, which does not follow the form of a column with margins.
+    </p>
+
+    <figure>
+      <img src="images/mockups/Universal%20Site%20-%20Mockup.jpg" alt="Image of a sitemap of the website">
+      <figcaption>Figure 4.1: Mockup of the universal design.</figcaption>
+    </figure>
+
+    <p>
+      <table>
+    <caption>Table 1: Overview of text styles across the website.</caption>
+   <tr>
+      <th>Where</th>
+      <th>What</th>
+      <th>Font</th>
+      <th>Size (px)</th>
+      <th>Color (#)</th>
+   </tr>
+    <tr>
+      <td>Universal</td>
+      <td>Title (h1)<br> Body text (p)</td>
+      <td>Open Sans Bold<br> Open Sans Light</td>
+      <td>72<br> 28</td>
+      <td>8d3c58<br> FFFFFF</td>
+    </tr>
+   <tr>
+      <td>Navbar</td>
+      <td>Logo (navbar > h1, ID logo)<br> Menu (class navLink)</td>
+      <td>Ubuntu Bold<br> Open Sans Semibold</td>
+      <td>60<br> 36</td>
+      <td>cbcbcb<br> FFFFFF</td>
+   </tr>
+   <tr>
+      <td>Footer</td>
+      <td>Logo (ID footer-logo)<br> Category header (footer > h2)<br> Sitemap links(footer > span)</td>
+      <td>Ubuntu Bold<br> Open Sans Bold<br> Open Sans Semibold</td>
+      <td>100<br> 24<br> 21</td>
+      <td>cbcbcb<br> FFFFFF<br> FFFFFF</td>
+   </tr>
+   <tr>
+      <td>Front page</td>
+      <td>Bulletin text (strong)<br> Smaller text (p)</td>
+      <td>Ubuntu Bold<br> Ubuntu Bold</td>
+      <td>160<br> 36</td>
+      <td>FFFFFF<br> FFFFFF</td>
+   </tr>
+   <tr>
+      <td>About Excellence</td>
+      <td>Subheader: Members (h2)<br> Names (strong)</td>
+      <td>Open Sans Bold<br> Open Sans Bold</td>
+      <td>36<br> 27</td>
+      <td>eff4b6<br> eff4b6</td>
+   </tr>
+   <tr>
+      <td>FAQ</td>
+      <td>Questions (h2)</td>
+      <td>Open Sans Bold</td>
+      <td>30</td>
+      <td>eff4b6</td>
+   </tr>
+   <tr>
+      <td>Discography</td>
+      <td>Subheader: Album title (h2)<br> Album content (strong)</td>
+      <td>Open Sans Bold<br> Open Sans Semibold</td>
+      <td>36<br> 30</td>
+      <td>eff4b6<br> FFFFFF</td>
+   </tr>
+   <tr>
+      <td>Pictures</td>
+      <td>Caption (strong)</td>
+      <td>Open Sans Semibold</td>
+      <td>30</td>
+      <td>dcdcdc</td>
+   </tr>
+   <tr>
+      <td>Video</td>
+      <td>Caption (strong)</td>
+      <td>Open Sans Semibold</td>
+      <td>30</td>
+      <td>dcdcdc</td>
+   </tr>
+   <tr>
+      <td>Tour Dates</td>
+      <td>Next concert (h3)<br> Tour name (h2)<br> Concerts (h3)<br> Date/Location (strong)</td>
+      <td>Open Sans Bold<br> Open Sans Bold<br> Open Sans Bold<br> Open Sans Bold</td>
+      <td>35<br> 40<br> 36<br> 30</td>
+      <td>eff4b6<br> 8d3c58<br> eff4b6<br> dcdcdc</td>
+   </tr>
+   <tr>
+      <td>Contact Us</td>
+      <td>E-mail, Social media (h2)<br> Gmail-address (address)</td>
+      <td>Open Sans Bold<br> Open Sans Bold</td>
+      <td>30<br> 30</td>
+      <td>eff4b6<br> FFFFFF</td>
+   </tr>
+   <tr>
+      <td>Guestbook</td>
+      <td>Name, Message (strong)<br> Submit (button)<br> Subheader: What oth.. (h2)<br> Name of poster (strong)</td>
+      <td>Open Sans Bold<br> Open Sans Bold<br> Open Sans Bold<br> Open Sans Bold</td>
+      <td>27<br> 30<br> 36<br> 27</td>
+      <td>eff4b6<br> 8d3c58<br> eff4b6<br> eff4b6</td>
+   </tr>
+</table>
+  </section>
+
+  <section>
+    <h2>5. Content</h2>
+    Our website will contain 9 pages.
+    <section>
+      <h3>5.1 Home - <i>home.html</i></h3>
+      <figure>
+        <img src="images/mockups/Frontpage%20with%20clear%20navbar%20-%20Mockup.jpg" alt="Mockup design of the Home page.">
+        <figcaption>Figure 5.1: Mockup of the Home page.</figcaption>
+      </figure>
+      <p>
+        The home page will feature a full-width background image from a concert, and also display the logo of Excellence in the center of said image, such that visitors will have a clear understanding of what webpage they are visiting. By displaying a large, aesthetically pleasing background image the page will attract the user's attention.
+      </p>
+      <p>
+        Because this is what most users will see when they open the website, it is important that it has a simple layout, and does not overwhelm the visitor with information. By not providing all the information at once, the visitor becomes curious to find out more about the band, and will start exploring the rest of the website. At this point, easy navigation becomes very important.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.2 About Excellence - <i>about.html</i></h3>
+      <figure>
+        <img src="images/mockups/About%20Excellence%20-%20Mockup.jpg" alt="Mockup design of the About Excellence page.">
+        <figcaption>Figure 5.2: Mockup of the About Excellence page.</figcaption>
+      </figure>
+      <p>
+        The About Excellence page contains a description of the band and the members. It has a header that says “About Excellence”, and after that a paragraph with some history and facts about the band. Both placed to the left with a margin on both sides. Next there will be a smaller header with the title “Members”. The members of the group will be displayed with a picture and a little text giving information about each of them at the right side of the picture. The picture will therefore be placed to the left of the site, and the pictures are of size 180x180px.
+      </p>
+      <p>
+        The page will play a big role to achieve the goal to inform people about the band “Excellence”. For someone that may be interested in the band and seeks information this page will therefore be very important. It will probably be one of the first sites the visitor will check out if they don’t know anything about Excellence previously.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.3 FAQ - <i>faq.html</i></h3>
+      <figure>
+        <img src="images/mockups/FAQ%20-%20Mockup.jpg" alt="Mockup design of the FAQ page.">
+        <figcaption>Figure 5.3: Mockup of the FAQ page.</figcaption>
+      </figure>
+      <p>
+        The page with FAQs will include some questions the band gets asked frequently, and have a header titled “FAQ”. The questions will be listed as paragraphs with a smaller header. Everything will be placed to the left at the center of the site.
+      </p>
+      <p>
+        This page helps to fulfill the purpose of the site because it gives information to the visitor that they probably are wondering about. We have included the FAQs because usually people are asking about the same things. When the visitor find answer to something they wanted to ask they will be happy and maybe get more interested in the band.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.4 Discography - <i>discography.html</i></h3>
+      <figure>
+        <img src="images/mockups/Discography%20-%20Mockup.jpg" alt="Mockup design of the Discography page.">
+        <figcaption>Figure 5.4: Mockup of the Discography page.</figcaption>
+      </figure>
+      <p>
+        The page consists of a vertical listing of each album in chronological order. The album art is anchored on the left side of the page, while a list of the songs on the album can be found beside it. Situated above the album art is the title of the album as well as the year of release.
+      </p>
+      <p>
+        This page will serve as a way for new visitors to discover previous work by the band and also as a reference to other visitors. Laying out the album information will make the website an attractive resource for information on the band.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.5 Tour Dates - <i>tourdates.html</i></h3>
+      <figure>
+        <img src="images/mockups/Tour%20Dates%20-%20Mockup.jpg" alt="Mockup design of the Tour Dates page.">
+        <figcaption>Figure 5.5: Mockup of the Tour Dates page.</figcaption>
+      </figure>
+      <p>
+        The concert page will display the upcoming tours and highlight the next tour.This page have the same design as the other subpages, with a picture header above the title, and the style of the text and colours matching the rest of the site. Below the title ‘Tour Dates’, there is a subtitle ‘Next concert:’, followed by the date and location of the next tour. Beneath this subtitle, there will be a new subtitle ‘Autumn Tour 2017’, followed by  a list containing the dates and locations of the upcoming tours, with the title ‘Concerts’.
+      </p>
+      <p>
+        One of the bands main goals is to sell more concerts tickets, specifically an increase in ticket sales by 20 % and have at least two international tours booked by the end of 2018. This page is going to give information about when and where the upcoming tours will be. This is achieved by creating a list containing all the upcoming tour dates and their locations. This makes it easy for the user to find the information they want. The next concert is written again outside the list, below the header. This will make it easy to see the next tour, and people will get this information without needing to read a list. This might also create a little hype for the next concert.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.6 Pictures - <i>pictures.html</i></h3>
+      <figure>
+        <img src="images/mockups/Pictures%20-%20Mockup.jpg" alt="Mockup design of the Pictures page.">
+        <figcaption>Figure 5.6: Mockup of the Pictures page.</figcaption>
+      </figure>
+
+      <p>
+        The pictures page contains pictures related to the band, such as pictures of their studio, their concerts, band practices and behind the scenes. It is a simple page with the title “Pictures”, and pictures stacked underneath each other separated by a short text telling the context of the picture and when the picture was taken. Every picture has the same aspect ratio of 16:9, with a max width of 640px and max height of 400px, which means that the pictures will be uploaded as 640px and 400px to reduce loading time, and adjusted according to the specific screen of the user. The pictures will have a small drop shadow.
+      </p>
+      <p>
+        This page contributes to fulfill the purpose of making visitors interested in the band, and become more familiar and feel closer. If visitors feel a bond with the band, that will possibly make them more interested in Excellences activities and would want to support them or see them live, hence buying tickets for shows.  Also, if the visitors see interesting content, they would be more likely to want to follow them on social media to keep updated.
+      </p>
+      <p>
+        On this page we decided to drop the picture header that is common for the other subpages due to that this is a page specific for pictures. It was deemed that there is no need for it as other pictures populate the page to make it interesting.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.7 Video - <i>video.html</i></h3>
+      <figure>
+        <img src="images/mockups/Video%20-%20Mockup.jpg" alt="Mockup design of the Video page.">
+        <figcaption>Figure 5.7: Mockup of the Video page.</figcaption>
+      </figure>
+      <p>
+        The video page contains videos related to the band, such as video from their concerts, practices and behind the scenes. The videos will be embedded YouTube videos.
+      </p>
+      <p>
+        This page have the same design as the other subpages, with a picture header above the title, and the style of the text and colours matching the rest of the site. Below the title ‘Video’ there are video players beneath each other, which are imported from Excellence YouTube. They are centered at the middle of the page. Below each player is a description of where and when the video was recorded. Each video player has the same aspect ratio of 16:9, with a max width of 640px and max height of 360px. The video players will have a small drop down shadow.
+      </p>
+      <p>
+        One of the band's goals is to inform the visitors about Excellence and give them  an impression of who they are and how they sound like. Another goal is to get 500 subscribers on YouTube and increase the ticket sales by 20%. This page will help the user get the feeling of Excellence, who they are, how they sound like, and such. This will help the user to bond with the band and hopefully want to check out more of their music and videos on YouTube, and perhaps even subscribe. And if the user likes the music, they might also want to come to one of their concerts.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.8 Contact Us - <i>contactus.html</i></h3>
+      <figure>
+        <img src="images/mockups/Contact%20us%20-%20Mockup.jpg"
+             alt="Mockup design of Contact Us page.">
+        <figcaption>Figure 5.8: Mockup of the Contact Us page.</figcaption>
+      </figure>
+      <p>
+        The contact page contains the contact info of the band, including their e-mail and social media links as well as information about where the band is based and what they are available for. This page will make the band easily available for venues and sponsors that could be interested in knowing more and possibly booking the band, or would want to make a sponsor deal. This is also a page which lets fans and other visitors know where they can find out more about Excellence.
+      </p>
+      <p>
+        This page features the same design as the other subpages, with a picture header above the title, and the style of the text and colors matching the rest of the site. Beneath the title ‘Contact Us’ there is the e-mail address, then other info, and finally an encouragement to visit Excellence social media sites along with two buttons linking to their Facebook page and YouTube channels. The social media buttons are of size 70x70px.
+      </p>
+      <p>
+        The Contact Us page contributes to making the band more international by allowing venues from all over the world to contact the band, and also advertises their social media channels to contribute to the like and subscribers goal.
+      </p>
+    </section>
+
+    <section>
+      <h3>5.9 Guestbook - <i>guestbook.html</i></h3>
+      <figure>
+        <img src="images/mockups/Guestbook%20-%20Mockup.jpg" alt="Mockup design of the Guestbook page.">
+        <figcaption>Figure 5.9: Mockup of the Guestbook page.</figcaption>
+      </figure>
+      <p>
+        On the top of the page there will be two text fields: one for a visitor's name and another field for the visitor's message to the band. Below this section there will be a list of previously submitted messages. By placing the submission form at the top, it makes it easier for the user to understand that they, too, may submit their own message.
+      </p>
+      <p>
+        This page allows the visitor to feel as if they are seen by the band, as well as the ability to discover other people who also enjoy the band. While it is not meant as a forum, it may allow the visitors to have a more interactive experience with others and possibly the band.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <h2>6. Minimum Requirements for JavaScript</h2>
+    We plan to fulfill the minimum requirements for JavaScript by implementing the following:
+
+    <ol>
+      <li>
+        <p>
+        An implementation of a guestbook, utilizing JavaScript to handle button clicks and the contents of text boxes. As an extended goal, it may use an in-browser database to locally store comments submitted by the user.
+      </p>
+      </li>
+      <li>
+      <p>
+        Discography page will generate album elements from JavaScript to keep the HTML document DRY. It will pull information on the album art, titles and songs which will be available on the JavaScript side. DOM elements will be inserted into the viewable document.
+      </p>
+      </li>
+      <li>
+      <p>
+        The navigation bar will switch pages by issuing XMLHttpRequests and swapping the current page’s content with the next page. In addition to this, given enough time, transitions may be applied to make it look more aesthetically pleasing (as the page will otherwise blink over to the other page upon swapping).
+      </p>
+      </li>
+      <li>
+      <p>
+        On homepage, the concert image will fade in from being invisible, giving the user a soft introduction to the image. This can be done using a mix of CSS and JavaScript, where the image starts with 0 opacity, and upon page load the JavaScript will add a CSS class which triggers a transition to full opacity.
+      </p>
+      </li>
+      <li>
+      <p>
+        <i>(Outside minimum requirements)</i>
+        In the navigation bar, dropdown menus will be used to hide most links to the subpages. The dropdown menus will be revealed upon clicking the menu items. An extended goal will be to apply an expanding animation to make it more visually pleasing.
+      </p>
+      </li>
+    </ol>
+    <p>
+      Håkon will be in charge of implementing no. 1 and no. 3, Sigrid no. 2, Caroline no. 4 and Kristoffer no. 5.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Plan</h2>
+    <h3>7.1 Folders and file structure</h3>
+
+    <ul>
+      <li>index.html</li>
+      <li>articles/
+        <ul>
+          <li>home.html</li>
+          <li>about.html</li>
+          <li>faq.html</li>
+          <li>discography.html</li>
+          <li>tourdates.html</li>
+          <li>pictures.html</li>
+          <li>video.html</li>
+          <li>contactus.html</li>
+          <li>guestbook.html</li>
+        </ul>
+      </li>
+      <li>styles/
+      <ul>
+        <li>main.css</li>
+        <li>home.css</li>
+      </ul>
+      </li>
+      <li>images/
+      <ul>
+        <li>albumart/
+          <ul>
+            <li>album_1.png</li>
+            <li>album_2.png</li>
+            <li>album_3.png</li>
+          </ul>
+        </li>
+        <li>members/
+          <ul>
+            <li>member_1.png</li>
+            <li>member_2.png</li>
+            <li>member_3.png</li>
+          </ul>
+        </li>
+        <li>pictures/
+          <ul>
+            <li>picture_1.png</li>
+            <li>picture_2.png</li>
+            <li>picture_3.png</li>
+            <li>picture_4.png</li>
+            <li>picture_5.png</li>
+          </ul>
+        </li>
+      </ul>
+      </li>
+      <li>scripts/
+      <ul>
+        <li>guestbook.js</li>
+        <li>splash_image.js</li>
+        <li>document_loader.js</li>
+        <li>discography.js</li>
+        <li>dropdown.js</li>
+      </ul>
+      </li>
+    </ul>
+
+    <h3>7.2 Work division and deadlines</h3>
+    <p>
+      Table 2 shows files that must be made, deadlines, who the task is
+      assigned for, and a short description for each of the files.
+    </p>
+    <table>
+      <caption>Table 2: Planning and deadlines for website</caption>
+   <tr>
+      <th>File</th>
+      <th>Deadline</th>
+      <th>Assigned person</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>index.html</td>
+      <td>07.11.17</td>
+      <td>All</td>
+      <td>Contains navigation bar, background, content container and footer</td>
+   </tr>
+   <tr>
+      <td>home.html</td>
+      <td>17.10.17</td>
+      <td>Sigrid</td>
+      <td>Home page with big image and text</td>
+   </tr>
+   <tr>
+      <td>about.html</td>
+      <td>17.10.17</td>
+      <td>Håvard</td>
+      <td>About Excellence page</td>
+   </tr>
+   <tr>
+      <td>faq.html</td>
+      <td>17.10.17</td>
+      <td>Kristoffer</td>
+      <td>FAQ page</td>
+   </tr>
+   <tr>
+      <td>discography.html</td>
+      <td>17.10.17</td>
+      <td>Sigrid</td>
+      <td>Discography page</td>
+   </tr>
+   <tr>
+      <td>tourdates.html</td>
+      <td>17.10.17</td>
+      <td>Sigrid</td>
+      <td>Page with tour dates </td>
+   </tr>
+   <tr>
+      <td>pictures.html</td>
+      <td>17.10.17</td>
+      <td>Caroline</td>
+      <td>Pictures page</td>
+   </tr>
+   <tr>
+      <td>video.html</td>
+      <td>17.10.17</td>
+      <td>Kristoffer</td>
+      <td>Videos page</td>
+   </tr>
+   <tr>
+      <td>contactus.html</td>
+      <td>17.10.17</td>
+      <td>Caroline</td>
+      <td>Contact Us page</td>
+   </tr>
+   <tr>
+      <td>guestbook.html</td>
+      <td>17.10.17</td>
+      <td>Håvard</td>
+      <td>Guestbook page</td>
+   </tr>
+   <tr>
+      <td>main.css</td>
+      <td>07.11.17</td>
+      <td>All</td>
+      <td>Styles for the universal styling of the page</td>
+   </tr>
+   <tr>
+      <td>home.css</td>
+      <td>07.11.17</td>
+      <td>All</td>
+      <td>Unique styles for front page</td>
+   </tr>
+   <tr>
+      <td>guestbook.js</td>
+      <td>30.10.17</td>
+      <td>Håvard</td>
+      <td>Functionality for guestbook.</td>
+   </tr>
+   <tr>
+      <td>splash_image.js</td>
+      <td>30.10.17</td>
+      <td>Caroline</td>
+      <td>Transition effect on front-page image.</td>
+   </tr>
+   <tr>
+      <td>document_loader.js</td>
+      <td>17.10.17</td>
+      <td>Håvard</td>
+      <td>Issues XMLHttpRequests (works on NTNU servers), used to load pages upon navigation</td>
+   </tr>
+   <tr>
+      <td>discography.js</td>
+      <td>30.10.17</td>
+      <td>Sigrid</td>
+      <td>Generate HTML element for album and put styles on it.</td>
+   </tr>
+   <tr>
+      <td>dropdown.js</td>
+      <td>30.10.17</td>
+      <td>Kristoffer</td>
+      <td>Functionality for dropdown in navbar</td>
+   </tr>
+</table>
+  </section>
+
+</main>
+
+<footer>
+  by Caroline Stensland Selte, Håvard Bjerke, Kristoffer Håkonsen, Sigrid Marita Kvamme <br>
+  October 2017
+</footer>
+
+</body>
+</html>
