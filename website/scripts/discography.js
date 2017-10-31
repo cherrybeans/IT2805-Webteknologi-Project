@@ -1,28 +1,28 @@
 var albums = [
   {
-    title: "The Best Album Sunset",
+    title: "Sunset",
     year: "2017",
     coverArtName: "sunsetalbum.png",
     songs: [
-      "Hello World", "Songs are the best", "The best I'm telling you", "THE BEST",
+      "Waiting For You", "Dawn", "Don't Snooze", "Bridge Over Wild Waters", "Look Andy, This Is My Towel", "The Towel Is Where Your Heart", "Straight Outta Jupiter",
     ]
   },
 
   {
-    title: "To cool for you",
+    title: "The man in the window",
     year: "2016",
     coverArtName: "themaninthewindowalbum.png",
     songs: [
-      "Hello World2", "Songs are the best2", "The best I'm telling you2", "THE BEST2",
+      "He Knows I'm A Solider", "Storm For The Road", "Give Me Your Spoons", "Every Fairy You Take", "Give Me Your Pants", "Independent Towel", "Stairway To Window"
     ]
   },
 
   {
-    title: "Love PizZA YA",
+    title: "The tape",
     year: "2015",
     coverArtName: "thetapealbum.png",
     songs: [
-      "Hello World3", "Songs are the best3", "The best I'm telling you3", "THE BEST3", "Baby baby",
+      "Hello World", "Forgetting Opportunity", "The Best, I'm Telling You", "Raging Liberty", "Explosive Safari", "Smells Like Lonely Apple",
     ]
   },
 ]
@@ -32,9 +32,6 @@ var albums = [
 function addAlbum(album) {
   var albumList = document.getElementById('album-list');
 
-  console.log(album.title, typeof(album.title));
-  console.log(album.songs)
-
   // Create elements needed for album
   var albumContainer = document.createElement('div');
   var albumTitle = document.createElement('h3');
@@ -42,8 +39,6 @@ function addAlbum(album) {
   var albumArt = document.createElement('img');
   var albumSongs = document.createElement('div');
   var albumSongList = document.createElement('ol');
-
-  console.log("Same as above", album.title)
 
   album.songs.map(function(song) {
     var albumSongTitle = document.createElement('li');
