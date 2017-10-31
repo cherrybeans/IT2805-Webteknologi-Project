@@ -5,8 +5,9 @@ var documentDependencies = {
             'styles/home.css'
         ],
         scripts: [
-
+          'scripts/splash_image.js'
         ],
+        onload: "si_load",
         isLoaded: false,
     },
     guestbook: {
@@ -24,7 +25,7 @@ var documentDependencies = {
             'styles/about.css'
         ],
         scripts: [
-            
+
         ],
         isLoaded: false,
     },
@@ -155,26 +156,26 @@ function quickLoad_ext(articleName, otherwise)
 
             headerElement.append(sheetElement);
         }
-        
+
         /* Insert script tags for the scripts we need to load */
         for(var i=0;i<deps.scripts.length;i++)
         {
             var scriptElement = document.createElement("script");
             scriptElement.src = deps.scripts[i];
             scriptElement.type = "text/javascript";
-            
+
             headerElement.append(scriptElement);
         }
 
     }, function() {
 
         /* Some Javascript files will need initialization on page load */
-        if(documentDependencies[articleName] !== undefined && 
+        if(documentDependencies[articleName] !== undefined &&
             documentDependencies[articleName].onload !== undefined)
-            
+
             /* Providing a function name, we can call a loader function.
              *  It is not immediately available, so we have to wait a
-             *  little bit for it to become available. 
+             *  little bit for it to become available.
              * Let the race begin! */
             function loadModule(retries) {
                 try {
