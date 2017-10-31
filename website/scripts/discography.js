@@ -1,6 +1,39 @@
+var albums = [
+  {
+    title: "The Best Album Sunset",
+    year: "2017",
+    coverArtName: "sunsetalbum.png",
+    songs: [
+      "Hello World", "Songs are the best", "The best I'm telling you", "THE BEST",
+    ]
+  },
+
+  {
+    title: "To cool for you",
+    year: "2016",
+    coverArtName: "themaninthewindowalbum.png",
+    songs: [
+      "Hello World2", "Songs are the best2", "The best I'm telling you2", "THE BEST2",
+    ]
+  },
+
+  {
+    title: "Love PizZA YA",
+    year: "2015",
+    coverArtName: "thetapealbum.png",
+    songs: [
+      "Hello World3", "Songs are the best3", "The best I'm telling you3", "THE BEST3", "Baby baby",
+    ]
+  },
+]
+
+
 // Also take inn array containing song titles.
-function addAlbum(title, year, coverName) {
-  var albumList = document.getElementById('album-list')
+function addAlbum(album) {
+  var albumList = document.getElementById('album-list');
+
+  console.log(album.title, typeof(album.title));
+  console.log(album.songs)
 
   // Create elements needed for album
   var albumContainer = document.createElement('div');
@@ -9,26 +42,27 @@ function addAlbum(title, year, coverName) {
   var albumArt = document.createElement('img');
   var albumSongs = document.createElement('div');
   var albumSongList = document.createElement('ol');
-  var song1 = document.createElement('li');
-  var song2 = document.createElement('li');
+
+  console.log("Same as above", album.title)
+
+  album.songs.map(function(song) {
+    var albumSongTitle = document.createElement('li');
+    albumSongTitle.innerText = song;
+    albumSongList.appendChild(albumSongTitle);
+  });
 
   // Add classes to elements
   albumContainer.classList.add('album-container');
   albumTitle.classList.add('album-title');
   albumContent.classList.add('album-content');
   albumArt.classList.add('album-art');
-  albumSongs.classList.add('album-songs');
+  albumSongList.classList.add('album-songs');
 
   // Add other attributes to elements
-  albumTitle.innerText = title + " (" + year + ")";
-  albumArt.src = "../images/albumart/" + coverName + ".png";
-  song1.innerText = "Title 1";
-  song2.innerText = "Title 2";
+  albumTitle.innerText = album.title + " (" + album.year + ")";
+  albumArt.src = "images/albumart/" + album.coverArtName;
 
   // Put together album elements to one piece
-  albumSongList.appendChild(song1);
-  albumSongList.appendChild(song2);
-
   albumContent.appendChild(albumArt);
   albumContent.appendChild(albumSongList);
 
@@ -36,4 +70,11 @@ function addAlbum(title, year, coverName) {
   albumContainer.appendChild(albumContent);
 
   albumList.appendChild(albumContainer);
+}
+
+
+function addAlbums() {
+  albums.map(function(album) {
+    addAlbum(album);
+  });
 }
