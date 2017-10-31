@@ -16,6 +16,17 @@ var documentDependencies = {
         scripts: [
             'scripts/guestbook.js'
         ],
+        onload: "gb_loadComments",
+        isLoaded: false,
+    },
+    about: {
+        stylesheets: [
+            'styles/about.css'
+        ],
+        scripts: [
+            
+        ],
+        isLoaded: false,
     },
     discography: {
         stylesheets: [
@@ -24,6 +35,7 @@ var documentDependencies = {
         scripts: [
             'scripts/discography.js'
         ],
+        isLoaded: false,
     },
 };
 
@@ -64,7 +76,8 @@ function loadArticle(url, targetContainer, before, closure, otherwise)
     req.send();
 }
 
-/* Given a list of stylesheets, either disable it (state=false) or enable it (state=true) */
+/* Given a list of stylesheets, either disable it (state=false)
+ *  or enable it (state=true) */
 function setStylesheetState(stylesheetInfo, state)
 {
     for(var i=0;i<stylesheetInfo.length;i++)
@@ -89,7 +102,8 @@ function quickLoad_ext(articleName, otherwise)
 
     loadArticle(articleResource, targetContainer, function() {
         /* Code to be run before the page properly loads */
-        /* Add page dependencies, like stylesheets and scripts to the page */
+        /* Add page dependencies, like stylesheets and scripts
+         *  to the page */
         /* Allows minimal loading of page */
         var deps = documentDependencies[articleName];
 
@@ -107,7 +121,8 @@ function quickLoad_ext(articleName, otherwise)
             }
         }
 
-        /* The rest of the code does not make sense if the page does not carry unique stylesheets */
+        /* The rest of the code does not make sense if the page does
+         *  not carry unique stylesheets */
         if(deps == null)
             return;
 
@@ -123,7 +138,8 @@ function quickLoad_ext(articleName, otherwise)
             return;
         }
 
-        /* We set a state flag to indicate that the dependencies are loaded */
+        /* We set a state flag to indicate that the
+         *  dependencies are loaded */
         deps.isLoaded = true;
 
         /* Get a reference to the <head> element into which scripts and
@@ -139,21 +155,38 @@ function quickLoad_ext(articleName, otherwise)
 
             headerElement.append(sheetElement);
         }
-
-        /* TODO: Allow dynamic loading of Javascript sources */
+        
+        /* Insert script tags for the scripts we need to load */
+        for(var i=0;i<deps.scripts.length;i++)
+        {
+            var scriptElement = document.createElement("script");
+            scriptElement.src = deps.scripts[i];
+            scriptElement.type = "text/javascript";
+            
+            headerElement.append(scriptElement);
+        }
 
     }, function() {
 
         /* Some Javascript files will need initialization on page load */
-        switch(articleName)
-        {
-        case "guestbook":
-            /* Reads comments from localStorage and generates the comment section */
-            gb_loadComments();
-            break;
-        default:
-            break;
-        }
+        if(documentDependencies[articleName] !== undefined && 
+            documentDependencies[articleName].onload !== undefined)
+            
+            /* Providing a function name, we can call a loader function.
+             *  It is not immediately available, so we have to wait a
+             *  little bit for it to become available. 
+             * Let the race begin! */
+            function loadModule(retries) {
+                try {
+                    window[documentDependencies[articleName].onload]();
+                } catch(e) {
+                    console.log("Failed")
+                    if(retries > 0)
+                        loadModule(retries - 1);
+                }
+            }
+            /* We give the function two retries, otherwise it's dead */
+            setTimeout(loadModule, 50, 2);
 
         /* If navigation was successful, set location such that
          *  the user may bookmark the page */
