@@ -1,15 +1,46 @@
-/* SIGRID MADE THIS; WILL FIX */
-
-h1, p, table th {
-  text-transform: uppercase;
-}
+/* Stylesheet for styles which are universal to site */
 
 body {
   background-color: #1c1c1c;
   font-family: 'Open Sans', sans-serif;
-  //font-weight: 700;
+  font-weight: 700;
   margin: 0;
   color: #ffffff;
+}
+
+main {
+  max-width: 50em;
+  margin: auto;
+  background-color: #1f1f1f;
+  box-shadow: 0 0 20px black;
+  transition: opacity 0.4s;
+  animation: mainFadeIn 0.4s linear;
+}
+
+.content-area {
+  margin: auto 6em;
+  padding-bottom: 5em;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+/* Transition on switching articles */
+@keyframes mainFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Navbar */
+
+/* Footer */
+
+/* Text */
+
+h1, p, table th {
+  text-transform: uppercase;
 }
 
 h1 {
@@ -33,11 +64,15 @@ p, td {
   color: white;
 }
 
-th {
-  font-size: 1em;
-  color: #dcdcdc;
-  text-align: left;
+strong {
+    color: #eff4b6;
 }
+
+.center-text {
+  text-align: center;
+}
+
+/* Table (for tourdate.html) */
 
 th, td {
   padding: 2px 40px;
@@ -47,33 +82,10 @@ table {
   padding-bottom: 5em;
 }
 
-.center-text {
-  text-align: center;
-}
-
-
-main {
-  max-width: 50em;
-  margin: auto;
-  background-color: #1f1f1f;
-  box-shadow: 0 0 20px black;
-  transition: opacity 0.4s;
-  animation: mainFadeIn 0.4s linear;
-}
-
-@keyframes mainFadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.content-area {
-  margin: auto 6em;
-  padding-bottom: 5em;
-  overflow: hidden;
-}
-
-strong {
-    color: #eff4b6;
+th {
+  font-size: 1em;
+  color: #dcdcdc;
+  text-align: left;
 }
 
 main#pictures > img{

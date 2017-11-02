@@ -36,6 +36,7 @@ var documentDependencies = {
         scripts: [
             'scripts/discography.js'
         ],
+        onload: "addAlbums",
         isLoaded: false,
     },
 };
@@ -94,12 +95,21 @@ function setStylesheetState(stylesheetInfo, state)
     }
 }
 
+function scriptLoad(articleName)
+{
+    if(documentDependencies[articleName] !== undefined
+       && documentDependencies[articleName].onload !== undefined)
+        window[documentDependencies[articleName].onload]();
+}
+
 /* A version of quickLoad() which allows a predicate upon failure */
 /* Do not chain calls to quickLoad_ext() through the predicate. */
 function quickLoad_ext(articleName, otherwise)
 {
     var targetContainer = document.getElementsByTagName("main")[0];
     var articleResource = "articles/" + articleName + ".html";
+
+    var firstLoad = true;
 
     loadArticle(articleResource, targetContainer, function() {
         /* Code to be run before the page properly loads */
@@ -136,6 +146,8 @@ function quickLoad_ext(articleName, otherwise)
             {
                 setStylesheetState(stylesheetInfo.stylesheets, true);
             }
+
+            firstLoad = false;
             return;
         }
 
@@ -161,6 +173,9 @@ function quickLoad_ext(articleName, otherwise)
         for(var i=0;i<deps.scripts.length;i++)
         {
             var scriptElement = document.createElement("script");
+            scriptElement.onload = function() {
+                scriptLoad(articleName);
+            };
             scriptElement.src = deps.scripts[i];
             scriptElement.type = "text/javascript";
 
@@ -170,24 +185,12 @@ function quickLoad_ext(articleName, otherwise)
     }, function() {
 
         /* Some Javascript files will need initialization on page load */
-        if(documentDependencies[articleName] !== undefined &&
-            documentDependencies[articleName].onload !== undefined)
-
-            /* Providing a function name, we can call a loader function.
-             *  It is not immediately available, so we have to wait a
-             *  little bit for it to become available.
-             * Let the race begin! */
-            function loadModule(retries) {
-                try {
-                    window[documentDependencies[articleName].onload]();
-                } catch(e) {
-                    console.log("Failed")
-                    if(retries > 0)
-                        loadModule(retries - 1);
-                }
-            }
-            /* We give the function two retries, otherwise it's dead */
-            setTimeout(loadModule, 50, 2);
+        /* Providing a function name, we can call a loader function.
+         *  It is not immediately available, so we have to wait a
+         *  little bit for it to become available.
+         * Let the race begin! */
+        if(!firstLoad)
+            scriptLoad(articleName);
 
         /* If navigation was successful, set location such that
          *  the user may bookmark the page */

@@ -36,9 +36,11 @@ function gb_loadComments()
 
         /* TODO: Add CSS class for textL and element */
 
-        dateL.innerHTML = new Date(comment.date).toLocaleDateString(["en-GB"]);
+        dateL.innerHTML = new Date(comment.date)
+                                .toLocaleDateString(["en-GB"]);
         nameL.innerHTML = comment.name;
-        textL.innerHTML = comment.message;
+        /* Replace newlines with HTML linebreaks */
+        textL.innerHTML = comment.message.replace("\n", "<br>");
         element.classList.add("guestbookComment");
 
         element.append(dateL);
