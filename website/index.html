@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:700" />
   <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/Navbar.css" >
+  <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
 
 
   <script src="scripts/document_loader.js" type="text/javascript"></script>
   <script src="scripts/discography.js" type="text/javascript"></script>
+  
 
   <title>Excellence</title>
 </head>
 <body>
 
 
-  <navbar>
-    <!-- TODO: Navigation bar elements will go here -->
+  <nav>
+    <!-- TODO: Navigation bar elements will go here 
     <button onclick="quickLoad('home')">Home</button>
     <button onclick="quickLoad('about')">About</button>
     <button onclick="quickLoad('contactus')">Contact Us</button>
@@ -29,8 +32,45 @@
     <button onclick="quickLoad('tourdate')">Tour Dates</button>
     <button onclick="quickLoad('pictures')">Pictures</button>
     <button onclick="quickLoad('video')">Videos</button>
+	-->
+	 <div class="navbar">
 
-  </navbar>
+        <!--Knapp Contact-->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="dropdownFunction(3)">CONTACT <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div class="dropdown-content" id="contactbtn">
+                <a onclick="quickLoad('contactus')">CONTACT US</a>
+                <a onclick="quickLoad('guestbook')">GUESTBOOK</a>
+            </div>
+        </div>
+        
+        <!--Knapp Media-->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="dropdownFunction(2)">MEDIA <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div class="dropdown-content" id="mediabtn">
+                <a onclick="quickLoad('pictures')">PICTURES</a>
+                <a onclick="quickLoad('video')">VIDEO</a>
+            </div>
+        </div>
+
+        <!--Knapp Concerts-->
+        <a onclick="quickLoad('tourdate')">CONCERTS</a>
+
+        <!--Knapp About-->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="dropdownFunction(1)">ABOUT <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div class="dropdown-content" id="aboutbtn">
+                <a onclick="quickLoad('about')">ABOUT EXCELLENCE</a>
+                <a onclick="quickLoad('faq')">FAQ</a>
+                <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
+            </div>
+        </div>
+
+        <!--Knapp Home-->
+        <a onclick="quickLoad('home')">HOME</a>
+    </div>
+
+  </nav>
 
 
   <main>
@@ -74,6 +114,6 @@
     </div>
 
   </footer>
-
+<script type="text/javascript" src="scripts/Navbar.js"></script>
 </body>
 </html>
