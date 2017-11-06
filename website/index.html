@@ -35,6 +35,10 @@
 	-->
 	 <div class="navbar">
         <img id="logo" src="images\logo\ExcellenceLogo-small.png" onclick="quickLoad('home')">
+       
+        <!--Dropdown knapp for små skjermer-->
+        <button class="icon" onclick="smallDropDown()">&#9776;</button>
+
         <!--Knapp Contact-->
         <div class="dropdown">
             <button class="dropbtn" onclick="dropdownFunction(3)">CONTACT <i class="fa fa-caret-down" aria-hidden="true"></i></button>
@@ -65,9 +69,21 @@
                 <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
             </div>
         </div>
-
         <!--Knapp Home-->
-        <a onclick="quickLoad('home')">HOME</a>
+        <a id="homebtn" onclick="quickLoad('home')">HOME</a>
+
+         <!--Den vertikale dropdown-->
+        <div class="smalldropdown", id="smalldropdownbtn">
+            <a id="homebtn" onclick="quickLoad('home')">HOME</a>
+            <a onclick="quickLoad('contactus')">CONTACT US</a>
+            <a onclick="quickLoad('guestbook')">GUESTBOOK</a>
+            <a onclick="quickLoad('pictures')">PICTURES</a>
+            <a onclick="quickLoad('video')">VIDEO</a>
+            <a onclick="quickLoad('about')">ABOUT EXCELLENCE</a>
+            <a onclick="quickLoad('faq')">FAQ</a>
+            <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
+        </div>
+
     </div>
 
   </nav>
