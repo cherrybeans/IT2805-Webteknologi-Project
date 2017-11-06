@@ -5,6 +5,13 @@
     font-family:Arial;
     padding-right: 50px;    /*Måtte padde litt, eller endre på dropdown oppførsel*/
     height: 46px;
+   /*
+       Låse navbar til toppen?
+       Gir feil på dropdowns
+     position:fixed;
+     top:0;
+    width: 100%;
+       */
 
 }
 
@@ -80,5 +87,11 @@
     cursor: pointer;
 }
 
+/*Dette er så brei navbaren kan være før logoen må forsvinne*/
+ @media (max-width: 780px){
+     .navbar img{
+         display: none;
+     }
+ }
 
- 
+ /*Navbaren failer hvis den er mindre enn 580px*/
