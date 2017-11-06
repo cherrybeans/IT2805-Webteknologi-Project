@@ -77,5 +77,8 @@
 .navbar img{
     height: 46px; 
     width: auto;
+    cursor: pointer;
 }
+
+
  
