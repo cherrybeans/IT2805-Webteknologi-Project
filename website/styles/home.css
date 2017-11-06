@@ -13,6 +13,16 @@ h1#homesplash{
   opacity: 0;
 }
 
+main#home {
+  margin-top: -3em;
+  width: 100% !important;
+  max-width: 100%;
+  margin-top: -3em;
+}
+
+div.navbar {
+  background-color: rgba(0,0,0,0.0) !important;
+}
 
 p {
   font-family: 'Ubuntu', sans-serif;
