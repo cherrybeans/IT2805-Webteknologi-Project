@@ -39,6 +39,7 @@ var documentDependencies = {
         onload: "addAlbums",
         isLoaded: false,
     },
+
 };
 
 /*

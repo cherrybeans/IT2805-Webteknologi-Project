@@ -4,6 +4,7 @@
     background-color: #333;
     font-family:Arial;
     padding-right: 50px;    /*Måtte padde litt, eller endre på dropdown oppførsel*/
+    height: 46px;
 
 }
 
@@ -72,3 +73,9 @@
 .show {
     display: block;
 }
+
+.navbar img{
+    height: 46px; 
+    width: auto;
+}
+ 
