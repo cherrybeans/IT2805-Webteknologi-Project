@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 
 <html lang="en">
@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="styles/main.css"/>
   <link rel="stylesheet" href="styles/Navbar.css" >
   <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="styles/video.css">
 
   <script src="scripts/document_loader.js" type="text/javascript"></script>
-  <script src="scripts/discography.js" type="text/javascript"></script>
+  <script src="scripts/Navbar.js" type="text/javascript"></script>
   
 
   <title>Excellence</title>
@@ -34,6 +34,10 @@
     <button onclick="quickLoad('video')">Videos</button>
 	-->
 	 <div class="navbar">
+        <img id="logo" src="images\logo\ExcellenceLogo-small.png" onclick="quickLoad('home')">
+       
+        <!--Dropdown knapp for små skjermer-->
+        <button class="icon" onclick="smallDropDown()">&#9776;</button>
 
         <!--Knapp Contact-->
         <div class="dropdown">
@@ -65,9 +69,21 @@
                 <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
             </div>
         </div>
-
         <!--Knapp Home-->
-        <a onclick="quickLoad('home')">HOME</a>
+        <a id="homebtn" onclick="quickLoad('home')">HOME</a>
+
+         <!--Den vertikale dropdown-->
+        <div class="smalldropdown", id="smalldropdownbtn">
+            <a id="homebtn" onclick="quickLoad('home')">HOME</a>
+            <a onclick="quickLoad('contactus')">CONTACT US</a>
+            <a onclick="quickLoad('guestbook')">GUESTBOOK</a>
+            <a onclick="quickLoad('pictures')">PICTURES</a>
+            <a onclick="quickLoad('video')">VIDEO</a>
+            <a onclick="quickLoad('about')">ABOUT EXCELLENCE</a>
+            <a onclick="quickLoad('faq')">FAQ</a>
+            <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
+        </div>
+
     </div>
 
   </nav>
