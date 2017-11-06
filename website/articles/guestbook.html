@@ -1,33 +1,43 @@
 <main>
+  <img src="images/sample-header.png">
 
-  <header>
+  <div class="content-area">
+    <header>
       <h1>Guestbook</h1>
-  </header>
+    </header>
+    <form id="commentForm" class="guestbook-submit-form" onsubmit="gb_submitComment()">
 
-  <form id="commentForm" class="guestbook-submit-form" onsubmit="gb_submitComment()">
+      <div class="formField">
+        <strong>Name</strong>
+        <input id="gb_nameBox" type="text"
+            placeholder="Write your name" required>
+      </div>
+      <div class="formField">
+        <strong>Message</strong>
+        <textarea id="gb_msgBox" rows="4" cols="4"
+            placeholder="Write something nice!" required></textarea>
+      </div>
 
-  <table>
-    <tr>
-        <td><strong>Name</strong></td>
-        <td><input id="gb_nameBox" type="text" placeholder="Write your name" required></td>
-    </tr>
-    <tr>
-        <td><strong>Message</strong></td>
-        <td><textarea id="gb_msgBox" rows="4" cols="40" placeholder="Write something nice!" required></textarea></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td><input type="button" value="Submit" onclick="gb_submitComment()"></td>
-    </tr>
-  </table>
+      <div id="commentValidationMessage" class="formField">
+        <strong>Ooops!</strong>
+        <p>
+          You didn't type all the details!
+        </p>
+      </div>
+      
+      <div class="formField">
+        <span></span>
+        <input type="button" value="Submit"
+            onclick="gb_submitComment()">
+      </div>
+    </form>
 
-  </form>
+    <hr>
+    <h2>What others have said</h2>
 
-  <hr>
-  <h2>What others have said</h2>
-
-  <div id="guestbookComments">
-      <!-- Comments will be dynamically inserted here -->
+    <div id="guestbookComments">
+        <!-- Comments will be dynamically inserted here -->
+    </div>
   </div>
 
 </main>
