@@ -119,13 +119,15 @@ footer{
   background-color: #141414;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 150px;
+  align-items: baseline;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 footer div{
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 footer button{
@@ -148,4 +150,31 @@ footer h2{
 footer div.social-media {
   height: 50px;
   width: 50px;
+  align-self: center;
+}
+
+footer div.footerImg{
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+    div.footerImg{
+      display: none;
+    }
+    div.buttons {
+      display: none;
+    }
+    footer{
+      justify-content: center;
+    }
+}
+
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+h4{
+    text-align: center;
 }
