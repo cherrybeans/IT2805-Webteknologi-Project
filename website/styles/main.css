@@ -106,3 +106,46 @@ th {
 video {
   max-width: 100%;
 }
+
+main#pictures > img{
+  display: block;
+  width: 640px;
+  height: 400px;
+  margin: auto;
+  box-shadow:
+}
+
+footer{
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+footer div{
+  display: flex;
+  flex-direction: column;
+}
+
+footer button{
+  background:none;
+  color:inherit;
+  border:none;
+  padding:0;
+  font: inherit;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+footer h2{
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+footer div.social-media {
+  height: 50px;
+  width: 50px;
+}
