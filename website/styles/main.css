@@ -9,6 +9,10 @@ body {
 }
 
 main {
+  /* To place the navbar above the page content */
+  position: relative;
+  z-index: 0;
+  
   max-width: 50em;
   margin: auto;
   background-color: #1f1f1f;
@@ -17,10 +21,21 @@ main {
   animation: mainFadeIn 0.4s linear;
 }
 
+nav {
+  position: relative;
+  z-index: 1;
+}
+
 .content-area {
   margin: auto 6em;
   padding-bottom: 5em;
   overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .content-area {
+    margin: 0;
+  }
 }
 
 img {
@@ -86,6 +101,10 @@ th {
   font-size: 1em;
   color: #dcdcdc;
   text-align: left;
+}
+
+video {
+  max-width: 100%;
 }
 
 main#pictures > img{
