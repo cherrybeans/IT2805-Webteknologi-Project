@@ -54,7 +54,7 @@ img {
 
 /* Text */
 
-h1, table th {
+h1, main#home p, table th {
   text-transform: uppercase;
 }
 
