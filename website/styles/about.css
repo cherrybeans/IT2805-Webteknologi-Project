@@ -10,7 +10,3 @@ div.memberListing > img {
     margin-right: 0.5em;
 }
 
-div.memberListing > p, section.memberDescription {
-    font-size: 0.8em;
-    margin: 0;
-}

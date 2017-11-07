@@ -48,7 +48,6 @@ div#commentValidationMessage > p {
   color: red;
   font-size: 1em;
   display: inline-block;
-  text-transform: none;
 }
 
 /* Applied to form elements when validation fails */
