@@ -122,6 +122,8 @@ footer{
   align-items: baseline;
   padding-top: 10px;
   padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 footer div{
