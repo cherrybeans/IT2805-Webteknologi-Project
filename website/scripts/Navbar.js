@@ -65,6 +65,6 @@ function removeSmallDropdown() {
 
 function smallDropDown() {
     document.getElementById("smalldropdownbtn").classList.toggle('show');
-    console.log(document.getElementById("smalldropdownbtn"));
+   
 }
 
