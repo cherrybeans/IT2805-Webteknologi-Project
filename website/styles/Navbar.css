@@ -143,6 +143,15 @@
 
 }
 
+ @media (orientation : portrait){
+     .navbar > a, .dropbtn{
+         display: none;
+     }
+     .icon{
+         display:block;
+     }
+ }
+
 
 .show{
     display: block;
