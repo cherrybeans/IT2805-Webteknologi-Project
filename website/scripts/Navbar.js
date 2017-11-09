@@ -72,7 +72,7 @@ function removeSmallDropdown() {
             openDropdown.classList.remove('show');
         }
     }
-}-
+}
 
 
 
