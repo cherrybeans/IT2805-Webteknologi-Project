@@ -8,7 +8,7 @@ html {
 
 body {
   background-color: #1c1c1c;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   margin: 0;
   color: #ffffff;
@@ -22,7 +22,7 @@ main {
   position: relative;
   z-index: 0;
   flex-grow: 1;
-  
+
   max-width: 50em;
   margin: auto;
   background-color: #1f1f1f;
@@ -54,8 +54,12 @@ img {
 
 /* Transition on switching articles */
 @keyframes mainFadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Navbar */
@@ -64,7 +68,9 @@ img {
 
 /* Text */
 
-h1, main#home p, table th {
+h1,
+main#home p,
+table th {
   text-transform: uppercase;
 }
 
@@ -83,14 +89,15 @@ h3 {
   font-size: 1.3em;
 }
 
-p, td {
+p,
+td {
   font-weight: 300;
   font-size: 1.2em;
   color: white;
 }
 
 strong {
-    color: #eff4b6;
+  color: #eff4b6;
 }
 
 .center-text {
@@ -99,7 +106,8 @@ strong {
 
 /* Table (for tourdate.html) */
 
-th, td {
+th,
+td {
   padding: 2px 40px;
 }
 
@@ -117,44 +125,48 @@ video {
   max-width: 100%;
 }
 
-main#pictures > img{
+main#pictures > img {
   display: block;
   width: 640px;
   height: 400px;
   margin: auto;
-  box-shadow:
+  box-shadow: ;
 }
 
-footer{
+footer {
   background-color: #141414;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: baseline;
   padding: 20px;
   position: relative;
   z-index: 1;
 }
 
-footer div{
+div.sitemap {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-footer button{
-  background:none;
-  color:inherit;
-  border:none;
-  padding:0;
+div.row {
+  display: flex;
+}
+
+footer button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
   font: inherit;
   cursor: pointer;
   font-size: 12px;
 }
 
-footer h2{
+footer h2 {
   font-size: 15px;
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 
@@ -164,28 +176,27 @@ footer div.social-media {
   align-self: center;
 }
 
-footer div.footerImg{
+footer div.footerImg {
   align-self: flex-start;
 }
 
 @media screen and (max-width: 600px) {
-    div.footerImg{
-      display: none;
-    }
-    div.buttons {
-      display: none;
-    }
-    footer{
-      justify-content: center;
-    }
+  div.footerImg {
+    display: none;
+  }
+  div.buttons {
+    display: none;
+  }
+  footer {
+    justify-content: center;
+  }
 }
 
-
-video{
-    width: 100%;
-    height: auto;
+video {
+  width: 100%;
+  height: auto;
 }
 
-h4{
-    text-align: center;
+h4 {
+  text-align: center;
 }
