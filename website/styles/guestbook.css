@@ -1,10 +1,64 @@
 .guestbookComment {
     border-bottom: 2px white;
+    animation: commentSlideIn 0.4s linear;
+    border-bottom: solid 1px white;
+    margin-bottom: 1em;
 }
 
-#commentForm {
-    width: 90%;
+@keyframes commentSlideIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-main {
+#commentForm > .formField {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
+
+.formField > strong {
+  width: 7em;
+  flex-grow: 0;
+}
+
+.formField > input, .formField > textarea {
+  flex-grow: 3;
+}
+
+.formField > input[type="button"] {
+  max-width: 10em;
+}
+
+/* We abuse the span in order to align the submit button to the right side */
+.formField > span {
+  flex-grow: 5;
+}
+
+div#commentValidationMessage {
+  height: 0em;
+  overflow: hidden;
+  transition: height 0.2s linear;
+}
+
+.invalidationMessage {
+  height: 2.5em !important;
+}
+
+div#commentValidationMessage > p {
+  color: red;
+  font-size: 1em;
+  display: inline-block;
+}
+
+/* Applied to form elements when validation fails */
+.invalidForm {
+  border-color: red;
+  background-color: #ffe0e0;
+}
+
+@media (max-width: 200px) {
+    #commentForm > .formField {
+        flex-direction: column;
+    }
+}
+

@@ -9,6 +9,10 @@ body {
 }
 
 main {
+  /* To place the navbar above the page content */
+  position: relative;
+  z-index: 0;
+  
   max-width: 50em;
   margin: auto;
   background-color: #1f1f1f;
@@ -17,10 +21,21 @@ main {
   animation: mainFadeIn 0.4s linear;
 }
 
+nav {
+  position: relative;
+  z-index: 1;
+}
+
 .content-area {
   margin: auto 6em;
   padding-bottom: 5em;
   overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .content-area {
+    margin: 0;
+  }
 }
 
 img {
@@ -39,7 +54,7 @@ img {
 
 /* Text */
 
-h1, p, table th {
+h1, main#home p, table th {
   text-transform: uppercase;
 }
 
@@ -86,4 +101,82 @@ th {
   font-size: 1em;
   color: #dcdcdc;
   text-align: left;
+}
+
+video {
+  max-width: 100%;
+}
+
+main#pictures > img{
+  display: block;
+  width: 640px;
+  height: 400px;
+  margin: auto;
+  box-shadow:
+}
+
+footer{
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+footer div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer button{
+  background:none;
+  color:inherit;
+  border:none;
+  padding:0;
+  font: inherit;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+footer h2{
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+footer div.social-media {
+  height: 50px;
+  width: 50px;
+  align-self: center;
+}
+
+footer div.footerImg{
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+    div.footerImg{
+      display: none;
+    }
+    div.buttons {
+      display: none;
+    }
+    footer{
+      justify-content: center;
+    }
+}
+
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+h4{
+    text-align: center;
 }

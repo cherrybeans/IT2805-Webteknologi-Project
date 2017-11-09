@@ -16,7 +16,7 @@ function gb_saveStorage(data)
 
 function gb_loadComments()
 {
-    var comments = gb_getStorage();
+    var comments = gb_getStorage().reverse();
     var container = document.getElementById("guestbookComments");
 
     /* Clear the comment container, to avoid duplicate comments */
@@ -36,11 +36,9 @@ function gb_loadComments()
 
         /* TODO: Add CSS class for textL and element */
 
-        dateL.innerHTML = new Date(comment.date)
-                                .toLocaleDateString(["en-GB"]);
+        dateL.innerHTML = new Date(comment.date).toLocaleDateString(["en-GB"]);
         nameL.innerHTML = comment.name;
-        /* Replace newlines with HTML linebreaks */
-        textL.innerHTML = comment.message.replace("\n", "<br>");
+        textL.innerHTML = comment.message;
         element.classList.add("guestbookComment");
 
         element.append(dateL);
@@ -58,8 +56,13 @@ function gb_submitComment()
     var nameBox = document.getElementById("gb_nameBox");
     var msgBox = document.getElementById("gb_msgBox");
 
+    var msg = document.getElementById("commentValidationMessage");
     if(!nameBox.checkValidity() || !msgBox.checkValidity())
+    {        
+        msg.classList.add("invalidationMessage");
         return;
+    }else
+        msg.classList.remove("invalidationMessage");
 
     var currentBook = gb_getStorage();
 
@@ -70,6 +73,9 @@ function gb_submitComment()
     });
 
     gb_saveStorage(currentBook);
+    
+    nameBox.value = "";
+    msgBox.value = "";
 
     gb_loadComments();
 }
