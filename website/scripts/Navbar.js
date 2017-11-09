@@ -11,7 +11,7 @@ function dropdownFunction(buttonclicked) {
         case 1:
           
             document.getElementById("aboutbtn").classList.toggle("show");
-            console.log(document.getElementById("aboutbtn"));
+
             break;
         case 2:
             document.getElementById("mediabtn").classList.toggle("show");
@@ -65,6 +65,6 @@ function removeSmallDropdown() {
 
 function smallDropDown() {
     document.getElementById("smalldropdownbtn").classList.toggle('show');
-    console.log(document.getElementById("smalldropdownbtn"));
+   
 }
 
