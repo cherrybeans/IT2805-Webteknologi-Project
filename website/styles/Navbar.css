@@ -54,7 +54,7 @@
 
 /*Alt blir rødt ved hover*/
 .navbar a:hover, .dropdown:hover .dropbtn , dropdown-content a:hover, .icon:hover{
-    background-color: red;
+    background-color: #8d3c58;
 	cursor: pointer; 
 }
 
