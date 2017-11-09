@@ -15,7 +15,6 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-
   /*Prevents user from marking the content of the navbar*/
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -92,12 +91,6 @@ dropdown-content a:hover, .icon:hover{
   top: 0;
 }
 
-/*Small dropdown*/
-.smalldropdown {
-  position: relative;
-  display: none;
-}
-
 /*Small dropdown links*/
 .smalldropdown > a {
   float: none;
@@ -110,6 +103,7 @@ dropdown-content a:hover, .icon:hover{
 
 /*Dropdown background for small dropdown*/
 .smalldropdown {
+  position: relative;
   display: none;
   position: absolute;
   background-color: #141414;
@@ -122,21 +116,28 @@ dropdown-content a:hover, .icon:hover{
 }
 
 /*This is as wide as the navbaren can be before the logo needs to disapare*/
-@media (max-width: 800px) {
-  .navbar img {
+@media (max-width: 808px) {
+  .navbar> img {
     display: none;
   }
 }
 
-/*When the screen is less than 580px, go to small dropdown*/
-@media (max-width: 580px) {
+/*When the screen is less than 592px, go to small dropdown and show the logo again*/
+@media (max-width: 592px) {
   .navbar > a,
   .dropbtn {
     display: none;
   }
-
-  .icon {
+  .icon, .navbar > img {
     display: block;
+  }
+
+}
+
+/*When smaller than 265px, the image needs to be removed again*/
+@media (max-width: 265px) {
+  .navbar> img {
+    display: none;
   }
 }
 
