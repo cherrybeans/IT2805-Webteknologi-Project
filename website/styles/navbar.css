@@ -103,9 +103,9 @@ dropdown-content a:hover, .icon:hover{
   float: none;
   display: block;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 80px;
+  font-size: 16px;
 }
 
 /*Dropdown background for small dropdown*/
@@ -118,7 +118,7 @@ dropdown-content a:hover, .icon:hover{
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0px;
-  top: 120px;
+  top: 46px;
 }
 
 /*This is as wide as the navbaren can be before the logo needs to disapare*/
@@ -141,7 +141,7 @@ dropdown-content a:hover, .icon:hover{
 }
 
 /*When on mobile device*/
-@media (orientation: portrait) {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
   .navbar > a,
   .dropbtn {
     display: none;
@@ -153,9 +153,16 @@ dropdown-content a:hover, .icon:hover{
     display: block;
     font-size: 71px;
     margin-right: 20px;
-
-
   }
+  .smalldropdown > a{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 80px;           
+  }
+  .smalldropdown{
+      top: 120px;
+  }
+
   .navbar > img{
       display: block;
       height: 120px;
