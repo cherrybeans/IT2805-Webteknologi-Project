@@ -1,44 +1,37 @@
 /*
 FILE NAME: scripts/Navbar.html
 WRITTEN BY: Kristoffer Håkonsen
+A big thanks to w3schools.com for inspiraton on how to create the dropdown navbar
+
 WHEN: October/November 2017
 PURPOSE: This page contains the Javascript which makes the navbar expand on click.
 */
 
+//Contains the name of the dropdown buttons
 btns = ["", "aboutbtn", "mediabtn", "contactbtn"];
 
-//Viser/viser ikke
+//Toggles showing and not showing the dropdowns
+/* We would like to thank the w3school for their idea about appending "show" to make the dropdown appear and disaper. 
+The idea came from their articles: https://www.w3schools.com/howto/howto_js_dropdown.asp */
 function dropdownFunction(buttonclicked) {
 	
+    //Checks if the clicked button is already showing a dropdown menu
 	if(document.getElementById(btns[buttonclicked]).classList.contains("show")){
 		removeDropdown();
 		
 	}
     else{
-		//Fjerner alle dropdowns
+		//Removes all dropdowns
 		removeDropdown();
 
-		//Viser den aktuelle dropdownen
-		switch (buttonclicked) {
-		
-			case 1:
-			  
-				document.getElementById("aboutbtn").classList.toggle("show");
+		//Shows the dropdown
+		document.getElementById(btns[buttonclicked]).classList.toggle("show");
 
-				break;
-			case 2:
-				document.getElementById("mediabtn").classList.toggle("show");
-				break;
-			case 3:
-				document.getElementById("contactbtn").classList.toggle("show");
-				break;
 		}
 	}
-    
-}
 
 
-// Hvis vi klikker på skjermen utenfor dropdown knappene fjernes dropdownen
+// If the screen is clicked outside the dropdown buttons or outside the small dropdown icon
 
 window.onclick = function(event){
     if (!event.target.matches('.dropbtn')) {
@@ -49,10 +42,10 @@ window.onclick = function(event){
     }
 }
 
-//Fjerner alle dropdowns
+//Removed all the regular dropdowns
+/*Thanks to the w3school for help on this function. We used the principles from https://www.w3schools.com/howto/howto_js_dropdown.asp to create the removeDropdown() function. */
 function removeDropdown() {
    
-    /*Fjerner vanlig dropdown*/
     var dropdowns = document.getElementsByClassName("dropdown-content");
     
     for (var i = 0; i < dropdowns.length; i++) {
@@ -63,7 +56,7 @@ function removeDropdown() {
     }
 }
 
-/*Fjerner liten dropdown*/
+/*Removes the small dropdown*/
 function removeSmallDropdown() {
     var dropdowns = document.getElementsByClassName("smalldropdown");
     for (var i = 0; i < dropdowns.length; i++) {
@@ -76,9 +69,7 @@ function removeSmallDropdown() {
 
 
 
-
+//Toggles the small dropdown menu
 function smallDropDown() {
     document.getElementById("smalldropdownbtn").classList.toggle('show');
-   
 }
-

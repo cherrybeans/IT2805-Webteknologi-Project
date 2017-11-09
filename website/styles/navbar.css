@@ -1,3 +1,11 @@
+/*
+    FILE NAME: styles/navbar.css
+    WRITTEN BY: Kristoffer Håkonsen
+    I would like to thank the W3school for inspiration when creating the navbar, and the tric of appending "show"
+    WHEN: October/November 2017
+    PURPOSE: This documents handles all the css related to the navbar, including the responsive design and the dropdown menues
+*/
+
 /*Main navbar background*/
 .navbar {
   overflow: hidden;
@@ -141,7 +149,7 @@ dropdown-content a:hover, .icon:hover{
   }
 }
 
-/*When on mobile device*/
+/*When on mobile device in portrait mode*/
 @media (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
   .navbar > a,
   .dropbtn {
