@@ -1,25 +1,39 @@
+/*
+FILE NAME: scripts/Navbar.html
+WRITTEN BY: Kristoffer Håkonsen
+WHEN: October/November 2017
+PURPOSE: This page contains the Javascript which makes the navbar expand on click.
+*/
+
+btns = ["", "aboutbtn", "mediabtn", "contactbtn"];
 
 //Viser/viser ikke
 function dropdownFunction(buttonclicked) {
-    
-    //Fjerner alle dropdowns
-    removeDropdown();
+	
+	if(document.getElementById(btns[buttonclicked]).classList.contains("show")){
+		removeDropdown();
+		
+	}
+    else{
+		//Fjerner alle dropdowns
+		removeDropdown();
 
-    //Viser den aktuelle dropdownen
-    switch (buttonclicked) {
-    
-        case 1:
-          
-            document.getElementById("aboutbtn").classList.toggle("show");
+		//Viser den aktuelle dropdownen
+		switch (buttonclicked) {
+		
+			case 1:
+			  
+				document.getElementById("aboutbtn").classList.toggle("show");
 
-            break;
-        case 2:
-            document.getElementById("mediabtn").classList.toggle("show");
-            break;
-        case 3:
-            document.getElementById("contactbtn").classList.toggle("show");
-            break;
-    }
+				break;
+			case 2:
+				document.getElementById("mediabtn").classList.toggle("show");
+				break;
+			case 3:
+				document.getElementById("contactbtn").classList.toggle("show");
+				break;
+		}
+	}
     
 }
 
@@ -58,7 +72,7 @@ function removeSmallDropdown() {
             openDropdown.classList.remove('show');
         }
     }
-}
+}-
 
 
 
