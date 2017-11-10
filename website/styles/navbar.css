@@ -111,6 +111,8 @@ dropdown-content a:hover, .icon:hover{
 
 /*Dropdown background for small dropdown*/
 .smalldropdown {
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
   display: none;
   position: absolute;
@@ -166,7 +168,7 @@ dropdown-content a:hover, .icon:hover{
   .smalldropdown > a{
     padding-top: 20px;
     padding-bottom: 10px;
-    font-size: 80px;           
+    font-size: 78px;           
   }
   .smalldropdown{
       top: 120px;
