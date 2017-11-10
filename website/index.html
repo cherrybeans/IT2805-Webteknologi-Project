@@ -1,136 +1,136 @@
-﻿<!DOCTYPE html>
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+  FILE NAME: index.html
+  WRITTEN BY: Sigrid Marita Kvamme, Håvard Bjerke,
+              Kristoffer Håkonsen, Caroline Stensland Selte
+  WHEN: October/November 2017
+  PURPOSE: Base html with navbar, footer and a content div.
+  */
+  -->
   <meta charset="UTF-8">
+  <title>Excellence</title>
 
+  <!-- Fonts, icons and stylesheets-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" />
   <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="stylesheet" href="styles/Navbar.css" >
+  <link rel="stylesheet" href="styles/navbar.css" >
   <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/video.css">
-  <link rel="stylesheet" href="styles/faq.css">
 
+  <!-- Javascript -->
   <script src="scripts/document_loader.js" type="text/javascript"></script>
-  <script src="scripts/Navbar.js" type="text/javascript"></script>
+  <script src="scripts/navbar.js" type="text/javascript"></script>
 
-
-  <title>Excellence</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/manifest.json">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="Excellence">
+  <meta name="application-name" content="Excellence">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
-
+  <!-- Navigation bar -->
   <nav>
-    <!-- TODO: Navigation bar elements will go here
-    <button onclick="quickLoad('home')">Home</button>
-    <button onclick="quickLoad('about')">About</button>
-    <button onclick="quickLoad('contactus')">Contact Us</button>
-    <button onclick="quickLoad('discography')">Discography</button>
-    <button onclick="quickLoad('faq')">FAQ</button>
-    <button onclick="quickLoad('guestbook')">Guestbook</button>
-    <button onclick="quickLoad('tourdate')">Tour Dates</button>
-    <button onclick="quickLoad('pictures')">Pictures</button>
-    <button onclick="quickLoad('video')">Videos</button>
-	-->
 	 <div class="navbar">
         <img id="logo" src="images\logo\ExcellenceLogo-small.png" onclick="quickLoad('home')">
 
-        <!--Dropdown knapp for små skjermer-->
+        <!--Dropdown button for small screens-->
         <button class="icon" onclick="smallDropDown()">&#9776;</button>
 
-        <!--Knapp Contact-->
+        <!--Button Contact-->
         <div class="dropdown">
-            <button class="dropbtn" onclick="dropdownFunction(3)">CONTACT <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <button class="dropbtn" onclick="dropdownFunction(3)">Contact <i class="fa fa-caret-down" aria-hidden="true"></i></button>
             <div class="dropdown-content" id="contactbtn">
-                <a onclick="quickLoad('contactus')">CONTACT US</a>
-                <a onclick="quickLoad('guestbook')">GUESTBOOK</a>
+                <a onclick="quickLoad('contactus')">Contact Us</a>
+                <a onclick="quickLoad('guestbook')">Guestbook</a>
             </div>
         </div>
 
-        <!--Knapp Media-->
+        <!--Button Media-->
         <div class="dropdown">
-            <button class="dropbtn" onclick="dropdownFunction(2)">MEDIA <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <button class="dropbtn" onclick="dropdownFunction(2)">Media <i class="fa fa-caret-down" aria-hidden="true"></i></button>
             <div class="dropdown-content" id="mediabtn">
-                <a onclick="quickLoad('pictures')">PICTURES</a>
-                <a onclick="quickLoad('video')">VIDEO</a>
+                <a onclick="quickLoad('pictures')">Pictures</a>
+                <a onclick="quickLoad('video')">Video</a>
             </div>
         </div>
 
-        <!--Knapp Concerts-->
-        <a onclick="quickLoad('tourdate')">CONCERTS</a>
+        <!--Button Concerts-->
+        <a onclick="quickLoad('tourdate')">Concerts</a>
 
-        <!--Knapp About-->
+        <!--Button About-->
         <div class="dropdown">
-            <button class="dropbtn" onclick="dropdownFunction(1)">ABOUT <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <button class="dropbtn" onclick="dropdownFunction(1)">About <i class="fa fa-caret-down" aria-hidden="true"></i></button>
             <div class="dropdown-content" id="aboutbtn">
-                <a onclick="quickLoad('about')">ABOUT EXCELLENCE</a>
+                <a onclick="quickLoad('about')">About Excellence</a>
                 <a onclick="quickLoad('faq')">FAQ</a>
-                <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
+                <a onclick="quickLoad('discography')">Discography</a>
             </div>
         </div>
-        <!--Knapp Home-->
-        <a id="homebtn" onclick="quickLoad('home')">HOME</a>
+        <!--Button Home-->
+        <a onclick="quickLoad('home')">Home</a>
 
          <!--Den vertikale dropdown-->
-        <div class="smalldropdown", id="smalldropdownbtn">
-            <a id="homebtn" onclick="quickLoad('home')">HOME</a>
-            <a onclick="quickLoad('contactus')">CONTACT US</a>
-            <a onclick="quickLoad('guestbook')">GUESTBOOK</a>
-            <a onclick="quickLoad('pictures')">PICTURES</a>
-            <a onclick="quickLoad('video')">VIDEO</a>
-            <a onclick="quickLoad('about')">ABOUT EXCELLENCE</a>
+        <div class="smalldropdown" id="smalldropdownbtn">
+            <a onclick="quickLoad('home')">Home</a>
+            <a onclick="quickLoad('contactus')">Contact Us</a>
+            <a onclick="quickLoad('guestbook')">Guestbook</a>
+            <a onclick="quickLoad('pictures')">Pictures</a>
+            <a onclick="quickLoad('video')">Video</a>
+            <a onclick="quickLoad('about')">About Excellence</a>
             <a onclick="quickLoad('faq')">FAQ</a>
-            <a onclick="quickLoad('discography')">DISCOGRAPHY</a>
+            <a onclick="quickLoad('discography')">Discography</a>
         </div>
-
     </div>
-
   </nav>
-
 
   <main>
     <!-- Content will be inserted dynamically here -->
   </main>
 
+  <!-- Footer -->
   <footer>
-    <!-- TODO: Footer will go here -->
     <div class="footerImg">
       <img src="images/logo/ExcellenceLogo-small.png" onclick="quickLoad('home')">
     </div>
-    <div class = "buttons">
-      <h2>Home</h2>
-      <button onclick="quickLoad('home')">Home</button>
+    <div id="sitemap-wrapper">
+      <div class="sitemap buttons">
+        <h2>Home</h2>
+        <button onclick="quickLoad('home')">Home</button>
+      </div>
+      <div class="sitemap buttons">
+        <h2>About</h2>
+        <button onclick="quickLoad('about')">About</button>
+        <button onclick="quickLoad('faq')">FAQ</button>
+        <button onclick="quickLoad('discography')">Discography</button>
+      </div>
+      <div class="sitemap buttons">
+        <h2>Concert</h2>
+        <button onclick="quickLoad('tourdate')">Tour Dates</button>
+      </div>
+      <div class="sitemap buttons">
+        <h2>Media</h2>
+        <button onclick="quickLoad('pictures')">Pictures</button>
+        <button onclick="quickLoad('video')">Videos</button>
+      </div>
+      <div class="sitemap buttons">
+        <h2>Contact</h2>
+        <button onclick="quickLoad('contactus')">Contact Us</button>
+        <button onclick="quickLoad('guestbook')">Guestbook</button>
+      </div>
     </div>
-    <div class = "buttons">
-      <h2>About</h2>
-      <button onclick="quickLoad('about')">About</button>
-      <button onclick="quickLoad('faq')">FAQ</button>
-      <button onclick="quickLoad('discography')">Discography</button>
+    <div class="socialmedia-wrapper">
+      <ul>
+        <li><a href="https://www.facebook.com/ExcellenceTheBand/" target="_blank"><img class="social-media" src="images/facebook.png"></a></li>
+        <li><a href="https://www.youtube.com/channel/UCt_tQ5NVWdAlNw99x5V9ewA" target="_blank"><img class="social-media" src="images/youtube.png"></a></li>
+      </ul>
     </div>
-    <div class = "buttons">
-      <h2>Concert</h2>
-      <button onclick="quickLoad('tourdate')">Tour Dates</button>
-    </div>
-    <div class = "buttons">
-      <h2>Media</h2>
-      <button onclick="quickLoad('pictures')">Pictures</button>
-      <button onclick="quickLoad('video')">Videos</button>
-    </div>
-    <div class = "buttons">
-      <h2>Contact</h2>
-      <button onclick="quickLoad('contactus')">Contact Us</button>
-      <button onclick="quickLoad('guestbook')">Guestbook</button>
-    </div>
-    <div class="social-media">
-      <a href="https://www.facebook.com/ExcellenceTheBand/" target="_blank"><img src="images/facebook.png"></a>
-    </div>
-    <div class="social-media">
-      <a href="https://www.youtube.com/channel/UCt_tQ5NVWdAlNw99x5V9ewA" target="_blank"><img src="images/youtube.png"></a>
-    </div>
-
   </footer>
-<script type="text/javascript" src="scripts/Navbar.js"></script>
-</body>
+  </body>
 </html>

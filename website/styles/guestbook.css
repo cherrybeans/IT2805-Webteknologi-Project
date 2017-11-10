@@ -1,13 +1,17 @@
 .guestbookComment {
-    border-bottom: 2px white;
-    animation: commentSlideIn 0.4s linear;
-    border-bottom: solid 1px white;
-    margin-bottom: 1em;
+  border-bottom: 2px white;
+  animation: commentSlideIn 0.4s linear;
+  border-bottom: solid 1px white;
+  margin-bottom: 1em;
 }
 
 @keyframes commentSlideIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #commentForm > .formField {
@@ -21,7 +25,8 @@
   flex-grow: 0;
 }
 
-.formField > input, .formField > textarea {
+.formField > input,
+.formField > textarea {
   flex-grow: 3;
 }
 
@@ -57,8 +62,7 @@ div#commentValidationMessage > p {
 }
 
 @media (max-width: 200px) {
-    #commentForm > .formField {
-        flex-direction: column;
-    }
+  #commentForm > .formField {
+    flex-direction: column;
+  }
 }
-

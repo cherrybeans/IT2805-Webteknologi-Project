@@ -1,0 +1,193 @@
+/*
+    FILE NAME: styles/navbar.css
+    WRITTEN BY: Kristoffer H�konsen
+    I would like to thank the W3school for inspiration when creating the navbar, and the tric of appending "show"
+    WHEN: October/November 2017
+    PURPOSE: This documents handles all the css related to the navbar, including the responsive design and the dropdown menues
+*/
+
+/*Main navbar background*/
+.navbar {
+  overflow: hidden;
+  background-color: #141414;
+  font-family: Arial;
+  padding-right: 50px; /*Needed to add some padding*/
+  height: 46px;
+}
+
+/* Navbar buttons in general */
+.navbar a,
+.navbar button {
+  text-transform: uppercase;
+}
+
+/*The "buttons" without dropdowns*/
+.navbar > a {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  /*Prevents user from marking the content of the navbar*/
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/*Dropdown*/
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+/*Dropdown buttons*/
+.dropdown .dropbtn,
+.icon {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background: inherit;
+  font-weight: bold;
+}
+
+/*Change color on hover/on push*/
+.navbar a:hover,
+.dropdown:hover .dropbtn,
+dropdown-content a:hover,
+.icon:hover {
+  background-color: #8d3c58;
+  cursor: pointer;
+}
+
+/*Dropdown background*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #141414;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/*Links on dropdown*/
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+/*Dropdown logo*/
+.navbar > img {
+  margin-left: 10px;
+  height: 46px;
+  width: auto;
+  cursor: pointer;
+}
+
+/*dropdown icon for small screens*/
+.icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: none;
+  font-size: 16px;
+  padding-top: 11px;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*Small dropdown links*/
+.smalldropdown > a {
+  float: none;
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+/*Dropdown background for small dropdown*/
+.smalldropdown {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+  display: none;
+  position: absolute;
+  background-color: #141414;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0px;
+  top: 46px;
+}
+
+/*This is as wide as the navbar can be before the logo needs to disappear*/
+@media (max-width: 808px) {
+  .navbar > img {
+    display: none;
+  }
+}
+
+/*When the screen is less than 592px, go to small dropdown and show the logo again*/
+@media (max-width: 592px) {
+  .navbar > a,
+  .dropbtn {
+    display: none;
+  }
+  .icon,
+  .navbar > img {
+    display: block;
+  }
+}
+
+/*When smaller than 265px, the image needs to be removed again*/
+@media (max-width: 265px) {
+  .navbar > img {
+    display: none;
+  }
+}
+
+/*When on mobile device in portrait mode*/
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .navbar > a,
+  .dropbtn {
+    display: none;
+  }
+  .navbar {
+    height: 120px;
+  }
+  .icon {
+    display: block;
+    font-size: 71px;
+    margin-right: 20px;
+  }
+  .smalldropdown > a {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 80px;
+  }
+  .smalldropdown {
+    top: 120px;
+  }
+
+  .navbar > img {
+    display: block;
+    height: 120px;
+  }
+}
+
+/*Displays dropdowns*/
+.show {
+  display: block;
+}
