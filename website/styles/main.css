@@ -1,4 +1,11 @@
-/* Stylesheet for styles which are universal to site */
+/*
+FILE NAME: styles/main.css
+WRITTEN BY: Sigrid Marita Kvamme, Håvard Bjerke,
+            Kristoffer Håkonsen, Caroline Stensland Selte
+WHEN: October/November 2017
+PURPOSE: Stylesheet for styles which are universal to site and a some specific
+         to subpages that did not require a stylesheet of their own.
+*/
 
 html {
   display: flex;

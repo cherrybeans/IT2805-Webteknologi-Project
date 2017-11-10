@@ -1,3 +1,10 @@
+/*
+FILE NAME: scripts/discography.js
+WRITTEN BY: Sigrid Marita Kvamme
+WHEN: October 2017
+PURPOSE: Insert albums dynamically with JS from a JSON object.
+*/
+
 var albums = [
   {
     title: "Sunset",

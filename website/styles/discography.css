@@ -1,3 +1,10 @@
+/*
+FILE NAME: styles/discography.css
+WRITTEN BY: Sigrid Marita Kvamme
+WHEN: October/November 2017
+PURPOSE: All styles spesific to the Discography page.
+*/
+
 .album-content {
   display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
