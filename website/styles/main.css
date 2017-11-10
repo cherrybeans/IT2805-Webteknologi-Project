@@ -247,12 +247,12 @@ video {
 }
 
 /* Styles links in FAQ section */
-.faq-area > p > a {
+p a {
   color: #8d3c58;
   cursor: pointer;
 }
 
-.faq-area > p > a:hover {
+ p a:hover {
   font-weight: bold;
   font-style: italic;
 }
