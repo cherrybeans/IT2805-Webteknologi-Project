@@ -36,3 +36,11 @@ li {
   line-height: 1.7;
   list-style-position: inside;
 }
+
+@media (-webkit-min-device-pixel-ratio: 2),
+    (max-width: 600px) {
+  .album-art {
+    width: 10em;
+    height: 10em;
+  }
+}
