@@ -1,12 +1,11 @@
 div.memberListing {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5em;
 }
 
 div.memberListing > img {
-    max-width: 10em;
-    margin-right: 0.5em;
+  max-width: 10em;
+  margin-right: 0.5em;
 }
-

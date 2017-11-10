@@ -62,9 +62,30 @@ img {
   }
 }
 
-/* Navbar */
+/* Positiong and styling social media buttons */
 
-/* Footer */
+.socialmedia-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-left: 0;
+}
+
+.social-media {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  opacity: 0.9;
+}
+
+.social-media:hover {
+  opacity: 1;
+}
 
 /* Text */
 
@@ -87,6 +108,10 @@ h2 {
 h3 {
   color: #eff4b6;
   font-size: 1.3em;
+}
+
+h4 {
+  text-align: center;
 }
 
 p,
@@ -121,36 +146,42 @@ th {
   text-align: left;
 }
 
-video {
-  max-width: 100%;
-}
-
-main#pictures > img {
-  display: block;
-  width: 640px;
-  height: 400px;
-  margin: auto;
-  box-shadow: ;
-}
+/* Footer */
 
 footer {
   background-color: #141414;
   display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px;
   position: relative;
-  z-index: 1;
 }
 
-div.sitemap {
+#sitemap-wrapper {
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  width: 35%;
+}
+
+footer .socialmedia-wrapper {
+  align-self: flex-end;
+  margin: 0 60px 0 20px;
+}
+
+.sitemap {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 0 10px;
 }
 
-div.row {
-  display: flex;
+footer h2 {
+  font-size: 1.1em;
+  color: #fff;
+  margin-bottom: 5px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
 }
 
 footer button {
@@ -160,43 +191,80 @@ footer button {
   padding: 0;
   font: inherit;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 1em;
+  opacity: 0.7;
 }
 
-footer h2 {
-  font-size: 15px;
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
+footer button:hover {
+  opacity: 1;
 }
 
-footer div.social-media {
-  height: 50px;
-  width: 50px;
+footer .social-media {
   align-self: center;
 }
 
-footer div.footerImg {
+footer .footerImg {
   align-self: flex-start;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-  div.footerImg {
-    display: none;
-  }
-  div.buttons {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #sitemap-wrapper {
     display: none;
   }
   footer {
     justify-content: center;
   }
+  footer .socialmedia-wrapper {
+    padding-left: 100px;
+  }
 }
 
+@media (max-width: 1200px) {
+  #sitemap-wrapper {
+    display: none;
+  }
+  footer {
+    justify-content: center;
+  }
+  footer .socialmedia-wrapper {
+    padding-left: 100px;
+  }
+}
+
+/* Styles videos in Video section */
 video {
+  max-width: 100%;
   width: 100%;
   height: auto;
 }
 
-h4 {
-  text-align: center;
+/* Styles links in FAQ section */
+.faq-area > p > a {
+  color: #8d3c58;
+  cursor: pointer;
+}
+
+.faq-area > p > a:hover {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Styles images in Pictures section*/
+img.pictures {
+  display: block;
+  width: 640px;
+  height: 400px;
+  margin: auto;
+}
+
+/* Styles links in Contact Us section */
+h2 a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+h2 a:hover {
+  font-weight: bold;
 }

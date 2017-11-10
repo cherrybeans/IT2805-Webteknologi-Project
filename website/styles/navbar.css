@@ -1,6 +1,6 @@
 /*
     FILE NAME: styles/navbar.css
-    WRITTEN BY: Kristoffer Håkonsen
+    WRITTEN BY: Kristoffer Hï¿½konsen
     I would like to thank the W3school for inspiration when creating the navbar, and the tric of appending "show"
     WHEN: October/November 2017
     PURPOSE: This documents handles all the css related to the navbar, including the responsive design and the dropdown menues
@@ -13,7 +13,13 @@
   font-family: Arial;
   padding-right: 50px; /*Needed to add some padding*/
   height: 46px;
-  }
+}
+
+/* Navbar buttons in general */
+.navbar a,
+.navbar button {
+  text-transform: uppercase;
+}
 
 /*The "buttons" without dropdowns*/
 .navbar > a {
@@ -53,7 +59,8 @@
 /*Change color on hover/on push*/
 .navbar a:hover,
 .dropdown:hover .dropbtn,
-dropdown-content a:hover, .icon:hover{
+dropdown-content a:hover,
+.icon:hover {
   background-color: #8d3c58;
   cursor: pointer;
 }
@@ -125,9 +132,9 @@ dropdown-content a:hover, .icon:hover{
   top: 46px;
 }
 
-/*This is as wide as the navbaren can be before the logo needs to disapare*/
+/*This is as wide as the navbar can be before the logo needs to disappear*/
 @media (max-width: 808px) {
-  .navbar> img {
+  .navbar > img {
     display: none;
   }
 }
@@ -138,45 +145,45 @@ dropdown-content a:hover, .icon:hover{
   .dropbtn {
     display: none;
   }
-  .icon, .navbar > img {
+  .icon,
+  .navbar > img {
     display: block;
   }
-
 }
 
 /*When smaller than 265px, the image needs to be removed again*/
 @media (max-width: 265px) {
-  .navbar> img {
+  .navbar > img {
     display: none;
   }
 }
 
 /*When on mobile device in portrait mode*/
-@media (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .navbar > a,
   .dropbtn {
     display: none;
   }
-  .navbar{
-    height:120px;  
+  .navbar {
+    height: 120px;
   }
   .icon {
     display: block;
     font-size: 71px;
     margin-right: 20px;
   }
-  .smalldropdown > a{
+  .smalldropdown > a {
     padding-top: 20px;
     padding-bottom: 10px;
-    font-size: 78px;           
+    font-size: 80px;
   }
-  .smalldropdown{
-      top: 120px;
+  .smalldropdown {
+    top: 120px;
   }
 
-  .navbar > img{
-      display: block;
-      height: 120px;
+  .navbar > img {
+    display: block;
+    height: 120px;
   }
 }
 
