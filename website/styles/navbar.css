@@ -164,6 +164,9 @@ dropdown-content a:hover,
   .dropbtn {
     display: none;
   }
+  main#home {
+    margin-top: -120px !important;
+  }
   .navbar {
     height: 120px;
   }
