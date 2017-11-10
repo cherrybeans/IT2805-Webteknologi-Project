@@ -1,3 +1,10 @@
+/*
+FILE NAME: styles/about.css
+WRITTEN BY: Håvard Bjerke
+WHEN: October/November 2017
+PURPOSE: Alignment and placement of member elements and pictures
+*/
+
 div.memberListing {
   display: flex;
   flex-direction: row;

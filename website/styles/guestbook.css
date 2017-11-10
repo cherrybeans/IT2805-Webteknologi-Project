@@ -1,3 +1,11 @@
+/*
+FILE NAME: styles/guestbook.css
+WRITTEN BY: Håvard Bjerke
+WHEN: October/November 2017
+PURPOSE: Guestbook uses flexbox for alingment of guestbook submission field
+         and the comment view.
+*/
+
 .guestbookComment {
   border-bottom: 2px white;
   animation: commentSlideIn 0.4s linear;
