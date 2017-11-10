@@ -9,7 +9,7 @@ var albums = [
   {
     title: "Sunset",
     year: "2017",
-    coverArtName: "sunsetalbum.png",
+    coverArtName: "sunsetalbum.jpg",
     songs: [
       "Waiting For You",
       "Dawn",
@@ -24,7 +24,7 @@ var albums = [
   {
     title: "The man in the window",
     year: "2016",
-    coverArtName: "themaninthewindowalbum.png",
+    coverArtName: "themaninthewindowalbum.jpg",
     songs: [
       "He Knows I'm A Solider",
       "Storm For The Road",
@@ -39,7 +39,7 @@ var albums = [
   {
     title: "The tape",
     year: "2015",
-    coverArtName: "thetapealbum.png",
+    coverArtName: "thetapealbum.jpg",
     songs: [
       "Hello World",
       "Forgetting Opportunity",
