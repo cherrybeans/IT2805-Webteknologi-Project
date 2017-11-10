@@ -38,6 +38,7 @@ main {
   animation: mainFadeIn 0.4s linear;
 }
 
+/*The navigation bar*/
 nav {
   position: relative;
   z-index: 1;
@@ -55,6 +56,7 @@ nav {
   }
 }
 
+/*Making images responsive*/
 img {
   width: 100%;
 }
@@ -239,19 +241,18 @@ footer .footerImg {
   }
 }
 
-/* Styles videos in Video section */
+/* Styles videos */
 video {
   max-width: 100%;
   width: 100%;
   height: auto;
 }
 
-/* Styles links in FAQ section */
+/* Styles links in paragrahs */
 p a {
   color: #8d3c58;
   cursor: pointer;
 }
-
  p a:hover {
   font-weight: bold;
   font-style: italic;
@@ -271,7 +272,6 @@ h2 a {
   text-decoration: none;
   font-weight: 300;
 }
-
 h2 a:hover {
   font-weight: bold;
 }
