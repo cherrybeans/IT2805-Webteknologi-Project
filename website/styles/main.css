@@ -131,6 +131,8 @@ td {
 }
 
 strong {
+  font-weight: 700;
+  font-size: 1.2em;
   color: #eff4b6;
 }
 
@@ -217,7 +219,7 @@ footer .footerImg {
   cursor: pointer;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media (-webkit-min-device-pixel-ratio: 2) {
   #sitemap-wrapper {
     display: none;
   }
@@ -274,4 +276,27 @@ h2 a {
 }
 h2 a:hover {
   font-weight: bold;
+}
+
+/* When on mobile, remove margins. They occupy too much space. */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .content-area {
+    margin: 20px;
+  }
+  main {
+    max-width: 100em;
+    margin: 20px;
+  }
+  main#home {
+    margin: 0px;
+  }
+  body {
+    font-size: 2rem;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  h1 {
+    font-size: 4rem;
+  }
 }
