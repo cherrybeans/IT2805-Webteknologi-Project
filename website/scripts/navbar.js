@@ -13,6 +13,7 @@ btns = ["", "aboutbtn", "mediabtn", "contactbtn"];
 //Toggles showing and not showing the dropdowns
 /* We would like to thank the w3school for their idea about appending "show" to make the dropdown appear and disaper.
 The idea came from their articles: https://www.w3schools.com/howto/howto_js_dropdown.asp */
+
 function dropdownFunction(buttonclicked) {
   //Checks if the clicked button is already showing a dropdown menu
   if (document.getElementById(btns[buttonclicked]).classList.contains("show")) {
@@ -26,8 +27,8 @@ function dropdownFunction(buttonclicked) {
   }
 }
 
-// If the screen is clicked outside the dropdown buttons or outside the small dropdown icon
 
+// If the screen is clicked outside the dropdown buttons or outside the small dropdown icon
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     removeDropdown();
@@ -36,6 +37,7 @@ window.onclick = function(event) {
     removeSmallDropdown();
   }
 };
+
 
 //Removed all the regular dropdowns
 /*Thanks to the w3school for help on this function. We used the principles from https://www.w3schools.com/howto/howto_js_dropdown.asp to create the removeDropdown() function. */
@@ -50,7 +52,7 @@ function removeDropdown() {
   }
 }
 
-/*Removes the small dropdown*/
+//Removes the small dropdown
 function removeSmallDropdown() {
   var dropdowns = document.getElementsByClassName("smalldropdown");
   for (var i = 0; i < dropdowns.length; i++) {
