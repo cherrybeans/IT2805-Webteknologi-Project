@@ -149,6 +149,7 @@ td {
 
 table {
   padding-bottom: 5em;
+  margin: auto;
 }
 
 th {
@@ -219,7 +220,7 @@ footer .footerImg {
   cursor: pointer;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #sitemap-wrapper {
     display: none;
   }
@@ -279,7 +280,7 @@ h2 a:hover {
 }
 
 /* When on mobile, remove margins. They occupy too much space. */
-@media (-webkit-min-device-pixel-ratio: 2) {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .content-area {
     margin: 20px;
   }
@@ -296,7 +297,7 @@ h2 a:hover {
 }
 
 /* When browsing in landscape mode, reduce the size of headers such that they become legible */
-@media (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   h1 {
     font-size: 4rem;
   }
