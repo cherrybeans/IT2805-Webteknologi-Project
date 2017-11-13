@@ -136,7 +136,7 @@
       </table>
 
       <h2>How was modularity handled?</h2>
-      <p>Modularity is handled by only loading the &lt;main&gt; component per page, along with a couple of style sheets where applicable. The Javascript code for this is found in document_loader.js. It uses XMLHttpRequests to download the .html files (which only contain &lt;main&gt;) and replaces the current &lt;main&gt; element. This allows the website to transition between the pages without blinking or reloading the navbar and footer. In addition to this, this method controls the active stylesheets and Javascript files.</p>
+      <p>Modularity is handled by only loading the &lt;main&gt; component per page, along with a couple of style sheets where applicable. The Javascript code for this is found in document_loader.js, and was implemented by Håvard. It uses XMLHttpRequests to download the .html files (which only contain &lt;main&gt;) and replaces the current &lt;main&gt; element. This allows the website to transition between the pages without blinking or reloading the navbar and footer, which are defined in index.html. In addition to this, this method controls the active stylesheets and Javascript files.</p>
     </section>
 
     <footer>
