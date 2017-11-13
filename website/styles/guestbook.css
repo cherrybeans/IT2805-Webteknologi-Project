@@ -69,8 +69,19 @@ div#commentValidationMessage > p {
   background-color: #ffe0e0;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 200px),
+    (-webkit-min-device-pixel-ratio: 2) {
   #commentForm > .formField {
     flex-direction: column;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #commentForm {
+    font-size: 1.5em;
+  }
+  input, textarea { 
+    font-size: 1em;
+    line-height: 1em;
   }
 }

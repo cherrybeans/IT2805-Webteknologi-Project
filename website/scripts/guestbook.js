@@ -37,7 +37,7 @@ function gb_loadComments() {
 
     var element = document.createElement("div");
 
-    var dateL = document.createElement("emph");
+    var dateL = document.createElement("i");
     var nameL = document.createElement("strong");
     var textL = document.createElement("div");
 
