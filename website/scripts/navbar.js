@@ -10,6 +10,7 @@ PURPOSE: This page contains the Javascript which makes the navbar expand on clic
 //Contains the name of the dropdown buttons
 btns = ["", "aboutbtn", "mediabtn", "contactbtn"];
 
+
 //Toggles showing and not showing the dropdowns
 /* We would like to thank the w3school for their idea about appending "show" to make the dropdown appear and disaper.
 The idea came from their articles: https://www.w3schools.com/howto/howto_js_dropdown.asp */

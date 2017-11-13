@@ -7,12 +7,16 @@ PURPOSE: Stylesheet for styles which are universal to site and a some specific
          to subpages that did not require a stylesheet of their own.
 */
 
+
+/* Make <html> tag a flexbox to maximize size of page */
 html {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 
+/* Because <html> is a flexbox, <body> may grow to minimum of 100% of browser height, allow us to push the footer to the bottom of the page.
+We also set the default font and font-weight at this point. */
 body {
   background-color: #1c1c1c;
   font-family: "Open Sans", sans-serif;
@@ -30,6 +34,8 @@ main {
   z-index: 0;
   flex-grow: 1;
 
+  /* Give the content a default max width, as well as a background color and a drop-shadow against the background.
+     Also, when loading, the page will fade from 0 opacity. */
   max-width: 50em;
   margin: auto;
   background-color: #1f1f1f;
@@ -220,7 +226,9 @@ footer .footerImg {
   cursor: pointer;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+/* In mobile mode, hide sitemap */
+@media (max-width: 1200px),
+(-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #sitemap-wrapper {
     display: none;
   }
@@ -232,19 +240,7 @@ footer .footerImg {
   }
 }
 
-@media (max-width: 1200px) {
-  #sitemap-wrapper {
-    display: none;
-  }
-  footer {
-    justify-content: center;
-  }
-  footer .socialmedia-wrapper {
-    padding-left: 100px;
-  }
-}
-
-/* Styles videos */
+/* Make videos have a max width equivalent to its contianer */
 video {
   max-width: 100%;
   width: 100%;
@@ -256,7 +252,7 @@ p a {
   color: #8d3c58;
   cursor: pointer;
 }
- p a:hover {
+p a:hover {
   font-weight: bold;
   font-style: italic;
 }

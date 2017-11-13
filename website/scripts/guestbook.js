@@ -37,9 +37,7 @@ function gb_loadComments() {
 
     var dateL = document.createElement("i");
     var nameL = document.createElement("strong");
-    var textL = document.createElement("div");
-
-    /* TODO: Add CSS class for textL and element */
+    var textL = document.createElement("p");
 
     dateL.innerHTML = new Date(comment.date).toLocaleDateString(["en-GB"]);
     nameL.innerHTML = comment.name;
