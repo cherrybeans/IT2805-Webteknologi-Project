@@ -295,8 +295,22 @@ h2 a:hover {
   }
 }
 
+/* When browsing in landscape mode, reduce the size of headers such that they become legible */
 @media (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   h1 {
     font-size: 4rem;
   }
+}
+
+/* Specifically for the about.html page, make flexboxes for items and sizes for the images. */
+div.memberListing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+div.memberListing > img {
+  max-width: 200px;
+  margin: 1em 1em 1em 0;
 }
