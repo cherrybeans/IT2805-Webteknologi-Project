@@ -6,6 +6,7 @@ PURPOSE: Guestbook uses flexbox for alingment of guestbook submission field
          and the comment view.
 */
 
+/* A comment is given a border at the bottom, an animation when being added, and a margin before the next comment. */
 .guestbookComment {
   border-bottom: 2px white;
   animation: commentSlideIn 0.4s linear;
@@ -13,6 +14,7 @@ PURPOSE: Guestbook uses flexbox for alingment of guestbook submission field
   margin-bottom: 1em;
 }
 
+/* Animation for when a comment is added */
 @keyframes commentSlideIn {
   0% {
     opacity: 0;
@@ -22,22 +24,26 @@ PURPOSE: Guestbook uses flexbox for alingment of guestbook submission field
   }
 }
 
+/* Form field should be a flexbox */
 #commentForm > .formField {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
+/* Give input labels a fixed size, for aesthetic reasons */
 .formField > strong {
   width: 7em;
   flex-grow: 0;
 }
 
+/* Make input fields big in the submission form */
 .formField > input,
 .formField > textarea {
   flex-grow: 3;
 }
 
+/* Apply some size to the form fields */
 .formField > input[type="button"] {
   max-width: 10em;
 }
@@ -47,16 +53,19 @@ PURPOSE: Guestbook uses flexbox for alingment of guestbook submission field
   flex-grow: 5;
 }
 
+/* Validation message starts with 0 height, and is given a height when used. We hide overflow such that the next is hidden. */
 div#commentValidationMessage {
   height: 0em;
   overflow: hidden;
   transition: height 0.2s linear;
 }
 
+/* Give the warning message a default height */
 .invalidationMessage {
   height: 2.5em !important;
 }
 
+/* A validation message for comment submission */
 div#commentValidationMessage > p {
   color: red;
   font-size: 1em;
@@ -69,6 +78,7 @@ div#commentValidationMessage > p {
   background-color: #ffe0e0;
 }
 
+/* In mobile mode, put comment submission field as a column */
 @media (max-width: 200px),
     (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #commentForm > .formField {
@@ -76,6 +86,7 @@ div#commentValidationMessage > p {
   }
 }
 
+/* In mobile mode, change font sizes */
 @media (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #commentForm {
     font-size: 1.5em;
