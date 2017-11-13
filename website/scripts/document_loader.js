@@ -1,5 +1,10 @@
-/* This file implements a document loader which uses XMLHttpRequest.
-    It also lists the dependencies of the different pages. */
+/*
+  FILE NAME: scripts/document_loader.js
+  WRITTEN BY: Håvard Bjerke
+  WHEN: October 2017
+  PURPOSE: This file implements a document loader which uses XMLHttpRequest.
+    It also lists the dependencies of the different pages.
+ */
 
 /* Listing of stylesheets and scripts attached to a given article */
 var documentDependencies = {

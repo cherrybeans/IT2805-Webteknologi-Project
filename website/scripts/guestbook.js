@@ -1,13 +1,11 @@
-/* Guestbook functionality, stores comments in localStorage
-    Also does dynamic loading into the guestbook page.
-    It also generates the elements for the comments. */
-	
 /*
   FILE NAME: scripts/guestbook.js
   WRITTEN BY: Håvard Bjerke
   WHEN: October/November 2017
-  PURPOSE: Creates the guestbook functionality on the guestbook page
-*/
+  PURPOSE: Guestbook functionality, stores comments in localStorage
+    Also does dynamic loading into the guestbook page.
+    It also generates the elements for the comments.
+ */
 
 function gb_getStorage() {
   var storedString = localStorage["guestbook"];
