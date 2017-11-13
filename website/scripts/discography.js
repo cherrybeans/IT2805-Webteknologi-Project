@@ -79,6 +79,7 @@ function addAlbum(album) {
   // Add other attributes to elements
   albumTitle.innerText = album.title + " (" + album.year + ")";
   albumArt.src = "images/albumart/" + album.coverArtName;
+  albumArt.alt = album.title;
 
   // Put together album elements to one piece
   albumContent.appendChild(albumArt);
