@@ -58,6 +58,7 @@ function loadArticle(url, targetContainer, before, closure, otherwise) {
   };
 
   req.open("GET", url);
+  req.responseType = 'text';
   req.send();
 }
 
